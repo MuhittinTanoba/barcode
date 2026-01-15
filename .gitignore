@@ -44,3 +44,7 @@ next-env.d.ts
 /dist
 /standalone
 /dist.zip
+
+#db
+*.db
+orders.db
