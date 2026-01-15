@@ -80,6 +80,7 @@ const Order = () => {
       {showPaymentModal && (
         <PaymentModal
           total={getTotalAmount()}
+          items={cartItems}
           onClose={handleModalClose}
           onProcessPayment={processPayment}
         />

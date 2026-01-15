@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 
-const PaymentModal = ({ total, onClose, onProcessPayment }) => {
+const PaymentModal = ({ total, items = [], onClose, onProcessPayment }) => {
   const { t } = useLanguage();
   const [step, setStep] = useState('selection'); // selection, cash_input, summary
   const [paymentMethod, setPaymentMethod] = useState(null);
@@ -169,6 +169,65 @@ const PaymentModal = ({ total, onClose, onProcessPayment }) => {
             >
               {t('newOrder') || 'New Order'}
             </button>
+          </div>
+
+          {/* Printable Receipt Area */}
+          <div className="print-area text-left p-4">
+               <div className="text-center mb-6">
+                   <h1 className="text-2xl font-bold uppercase tracking-wider border-b-2 border-black pb-2 mb-2">Boss POS</h1>
+                   <p className="text-sm">{new Date().toLocaleString()}</p>
+                   <p className="text-sm">Order #{Math.floor(Date.now() / 1000).toString().slice(-6)}</p>
+               </div>
+               
+               <div className="mb-6">
+                   <table className="w-full text-sm">
+                       <thead>
+                           <tr className="border-b border-black">
+                               <th className="text-left py-1">Item</th>
+                               <th className="text-center py-1">Qty</th>
+                               <th className="text-right py-1">Price</th>
+                           </tr>
+                       </thead>
+                       <tbody className="divide-y divide-gray-200">
+                           {(items || []).map((item, idx) => (
+                               <tr key={idx}>
+                                   <td className="py-2">
+                                       <div className="font-medium">{item.name}</div>
+                                       {item.options && item.options.length > 0 && (
+                                           <div className="text-xs text-gray-500">
+                                               {item.options.map(opt => `${opt.name}`).join(', ')}
+                                           </div>
+                                       )}
+                                   </td>
+                                   <td className="text-center py-2">{item.quantity}</td>
+                                   <td className="text-right py-2">${((item.unitPrice + (item.options?.reduce((a,b)=>a+(b.price||0),0)||0)) * item.quantity).toFixed(2)}</td>
+                               </tr>
+                           ))}
+                       </tbody>
+                   </table>
+               </div>
+               
+               <div className="border-t-2 border-black pt-4 mb-8">
+                   <div className="flex justify-between text-lg font-bold mb-2">
+                       <span>Total</span>
+                       <span>${total.toFixed(2)}</span>
+                   </div>
+                   <div className="flex justify-between text-sm mb-1">
+                       <span>Payment ({paymentMethod})</span>
+                       <span>${(paymentMethod === 'cash' ? (parseFloat(tenderedAmount)||total) : total).toFixed(2)}</span>
+                   </div>
+                   {paymentMethod === 'cash' && change > 0 && (
+                       <div className="flex justify-between text-sm">
+                           <span>Change</span>
+                           <span>${change.toFixed(2)}</span>
+                       </div>
+                   )}
+               </div>
+               
+               <div className="text-center text-sm">
+                   <p className="font-medium mb-1">Thank You!</p>
+                   <p>Please come again.</p>
+               </div>
           </div>
         </div>
       </div>

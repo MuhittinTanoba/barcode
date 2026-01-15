@@ -1,107 +1,155 @@
 @import "tailwindcss";
 
 :root {
-    /* Premium Palette */
-    --background: #f8fafc;
-    /* Very light slate/white for main background */
-    --foreground: #00334e;
-    /* Dark Navy - Main Text */
+  /* Premium Palette */
+  --background: #f8fafc;
+  /* Very light slate/white for main background */
+  --foreground: #00334e;
+  /* Dark Navy - Main Text */
 
-    --primary: #004d73;
-    /* Deep Blue - Primary Actions/Links */
-    --primary-foreground: #ffffff;
+  --primary: #004d73;
+  /* Deep Blue - Primary Actions/Links */
+  --primary-foreground: #ffffff;
 
-    --secondary: #dbebfa;
-    /* Pale Blue - Secondary Backgrounds/Accents */
-    --secondary-foreground: #00334e;
+  --secondary: #dbebfa;
+  /* Pale Blue - Secondary Backgrounds/Accents */
+  --secondary-foreground: #00334e;
 
-    --accent: #007fbd;
-    /* Bright Blue - Highlights/Active States */
-    --accent-foreground: #ffffff;
+  --accent: #007fbd;
+  /* Bright Blue - Highlights/Active States */
+  --accent-foreground: #ffffff;
 
-    --muted: #f1f5f9;
-    /* Slate 100 - Muted Backgrounds */
-    --muted-foreground: #64748b;
-    /* Slate 500 - Muted Text */
+  --muted: #f1f5f9;
+  /* Slate 100 - Muted Backgrounds */
+  --muted-foreground: #64748b;
+  /* Slate 500 - Muted Text */
 
-    --destructive: #ef4444;
-    --destructive-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
 
-    --border: #e2e8f0;
-    --input: #e2e8f0;
-    --ring: #007fbd;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #007fbd;
 
-    --radius: 0.75rem;
+  --radius: 0.75rem;
 }
 
 @theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 
-    --color-primary: var(--primary);
-    --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
 
-    --color-secondary: var(--secondary);
-    --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
 
-    --color-accent: var(--accent);
-    --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
 
-    --color-muted: var(--muted);
-    --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
 
-    --color-destructive: var(--destructive);
-    --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
 
-    --color-border: var(--border);
-    --color-input: var(--input);
-    --color-ring: var(--ring);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 
-    --radius-lg: var(--radius);
-    --radius-md: calc(var(--radius) - 2px);
-    --radius-sm: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 }
 
 body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Custom Utilities */
 .glass {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .card-hover {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .card-hover:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(0, 51, 78, 0.1), 0 4px 6px -2px rgba(0, 51, 78, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 51, 78, 0.1), 0 4px 6px -2px rgba(0, 51, 78, 0.05);
 }
 
 /* WebKit Tarayıcıları (Chrome, Edge, Safari) */
 .custom-thin-scrollbar::-webkit-scrollbar {
-    width: 2px; /* Veya 2px gibi istediğiniz daha ince bir değer */
+  width: 2px;
+  /* Veya 2px gibi istediğiniz daha ince bir değer */
+}
+
+.custom-thin-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #004d73;
+  /* Kaydırma kolu rengi (örneğin mavi-500) */
+  border-radius: 9999px;
+  /* Yuvarlak köşeler */
+}
+
+.custom-thin-scrollbar::-webkit-scrollbar-track {
+  background: #eff6ff;
+  /* Arka plan rengi (örneğin mavi-50) */
+}
+
+/* Firefox Tarayıcıları */
+.custom-thin-scrollbar {
+  scrollbar-width: thin;
+  /* Daha ince kaydırma çubuğu */
+  scrollbar-color: #004d73 #eff6ff;
+  /* Kol ve iz rengi */
+}
+
+@media print {
+  body * {
+    visibility: hidden;
   }
-  
-  .custom-thin-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #004d73; /* Kaydırma kolu rengi (örneğin mavi-500) */
-    border-radius: 9999px; /* Yuvarlak köşeler */
+
+  .print-area,
+  .print-area * {
+    visibility: visible;
   }
-  
-  .custom-thin-scrollbar::-webkit-scrollbar-track {
-    background: #eff6ff; /* Arka plan rengi (örneğin mavi-50) */
+
+  .print-area {
+    visibility: visible !important;
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    font-family: 'Courier New', Courier, monospace;
+    /* Invoice look */
   }
-  
-  /* Firefox Tarayıcıları */
-  .custom-thin-scrollbar {
-    scrollbar-width: thin; /* Daha ince kaydırma çubuğu */
-    scrollbar-color: #004d73 #eff6ff; /* Kol ve iz rengi */
+
+  /* Hide all other modals or fixed elements that might interfere */
+  .fixed,
+  .sticky,
+  header,
+  nav,
+  footer {
+    display: none !important;
   }
+}
+
+/* Hide print area on screen */
+.print-area {
+  display: none;
+}
