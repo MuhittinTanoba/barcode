@@ -1,0 +1,232 @@
+/* Employee Management Premium Light Theme */
+.employee-dashboard {
+    min-height: 100vh;
+    background-color: var(--background);
+    color: var(--foreground);
+    padding-bottom: 3rem;
+}
+
+.employee-header {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.emp-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 51, 78, 0.05), 0 2px 4px -1px rgba(0, 51, 78, 0.03);
+    transition: all 0.3s ease;
+}
+
+.emp-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 51, 78, 0.1), 0 4px 6px -2px rgba(0, 51, 78, 0.05);
+    border-color: var(--secondary);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 2.25rem;
+}
+
+.stat-label {
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+}
+
+/* Icon backgrounds - Soft Pastels */
+.icon-bg {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+.icon-bg-blue {
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+.icon-bg-emerald {
+    background-color: #d1fae5;
+    color: #059669;
+}
+
+.icon-bg-amber {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.icon-bg-purple {
+    background-color: #f3e8ff;
+    color: #7c3aed;
+}
+
+.icon-bg-indigo {
+    background-color: #e0e7ff;
+    color: #4f46e5;
+}
+
+/* Text colors */
+.text-premium-primary {
+    color: var(--primary);
+}
+
+.text-premium-muted {
+    color: var(--muted-foreground);
+}
+
+.text-premium-accent {
+    color: var(--accent);
+}
+
+/* Form Elements */
+.emp-input {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid var(--border);
+    color: var(--foreground);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+}
+
+.emp-input:focus {
+    outline: none;
+    border-color: var(--ring);
+    box-shadow: 0 0 0 3px var(--secondary);
+}
+
+.emp-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+/* Tables */
+.emp-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.emp-table th {
+    background-color: var(--muted);
+    color: var(--primary);
+    font-weight: 700;
+    text-align: left;
+    padding: 1rem 1.5rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+}
+
+.emp-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--muted);
+    color: var(--foreground);
+}
+
+.emp-table tr {
+    transition: background-color 0.2s;
+}
+
+.emp-table tr:hover {
+    background-color: var(--secondary);
+}
+
+.emp-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Buttons */
+.emp-btn {
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    border: none;
+    font-size: 0.875rem;
+}
+
+.emp-btn-primary {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    box-shadow: 0 4px 6px -1px rgba(0, 77, 115, 0.2);
+}
+
+.emp-btn-primary:hover {
+    background-color: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 8px -1px rgba(0, 77, 115, 0.3);
+}
+
+.emp-btn-danger {
+    background-color: #fee2e2;
+    color: #ef4444;
+}
+
+.emp-btn-danger:hover {
+    background-color: #fecaca;
+    color: #dc2626;
+}
+
+.emp-btn-secondary {
+    background-color: white;
+    border: 1px solid var(--border);
+    color: var(--muted-foreground);
+}
+
+.emp-btn-secondary:hover {
+    background-color: var(--muted);
+    color: var(--foreground);
+    border-color: var(--muted-foreground);
+}
+
+.status-badge {
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+}
+
+.status-active {
+    background-color: #d1fae5;
+    color: #059669;
+}
+
+.status-inactive {
+    background-color: #fee2e2;
+    color: #ef4444;
+}
+
+/* Custom Scrollbar for the table container */
+.table-container {
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 51, 78, 0.05);
+}

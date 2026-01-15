@@ -1,0 +1,164 @@
+[
+  {
+    "urun_kodu": "111-01",
+    "urun_adi": "ÜLKER PÖTİBÖR 175 G",
+    "barkod": "8690504011101",
+    "deger": "30,00"
+  },
+  {
+    "urun_kodu": "112-00",
+    "urun_adi": "ÜLKER PÖTİBÖR KAKAOLU 175 G",
+    "barkod": "8690504011200",
+    "deger": "30,00"
+  },
+  {
+    "urun_kodu": "117-00",
+    "urun_adi": "ÜLKER PÖTİBÖR ÇİFTE KAVRULMUŞ 175 G",
+    "barkod": "8690504011705",
+    "deger": "30,00"
+  },
+  {
+    "urun_kodu": "114-01",
+    "urun_adi": "ÜLKER PÖTİBÖR 450 G",
+    "barkod": "8690504011408",
+    "deger": "70,00"
+  },
+  {
+    "urun_kodu": "115-00",
+    "urun_adi": "ÜLKER PÖTİBÖR KAKAOLU 450 G",
+    "barkod": "8690504011507",
+    "deger": "70,00"
+  },
+  {
+    "urun_kodu": "117-01",
+    "urun_adi": "ÜLKER PÖTİBÖR ÇİFTE KAVRULMUŞ 450 G",
+    "barkod": "8690504011712",
+    "deger": "70,00"
+  },
+  {
+    "urun_kodu": "172-06",
+    "urun_adi": "ÜLKER PÖTİBÖR 800 G",
+    "barkod": "8690504017264",
+    "deger": "112,00"
+  },
+  {
+    "urun_kodu": "35-03",
+    "urun_adi": "ÜLKER BEBE BİSKÜVİSİ 172 G",
+    "barkod": "8690504014300",
+    "deger": "40,00"
+  },
+  {
+    "urun_kodu": "145-00",
+    "urun_adi": "ÜLKER BEBE BİSKÜVİSİ 400 G",
+    "barkod": "8690504014508",
+    "deger": "83,00"
+  },
+  {
+    "urun_kodu": "168-08",
+    "urun_adi": "ÜLKER BEBE BİSKÜVİSİ 800 G",
+    "barkod": "8690504016885",
+    "deger": "158,00"
+  },
+  {
+    "urun_kodu": "172-07",
+    "urun_adi": "ÜLKER FİNGER 750 G",
+    "barkod": "8690504017271",
+    "deger": "120,00"
+  },
+  {
+    "urun_kodu": "116-04",
+    "urun_adi": "ALTINBAŞAK LİGHT KLASİK 46 G",
+    "barkod": "8690504011606",
+    "deger": "13,00"
+  },
+  {
+    "urun_kodu": "116-01",
+    "urun_adi": "ALTINBAŞAK LİGHT KLASİK 5x46 G",
+    "barkod": "8690504011613",
+    "deger": "62,00"
+  },
+  {
+    "urun_kodu": "116-09",
+    "urun_adi": "ALTINBAŞAK ÇÖREKOTLU VE KİNOALI 40 G",
+    "barkod": "8690504011699",
+    "deger": "14,00"
+  },
+  {
+    "urun_kodu": "118-02",
+    "urun_adi": "ALTINBAŞAK ÇÖREKOTLU VE KİNOALI 5x40 G",
+    "barkod": "8690504011828",
+    "deger": "65,00"
+  },
+  {
+    "urun_kodu": "743-08",
+    "urun_adi": "ALTINBAŞAK GRİSSİNİ SADE 125 G",
+    "barkod": "8690504074380",
+    "deger": "60,00"
+  },
+  {
+    "urun_kodu": "743-09",
+    "urun_adi": "ALTINBAŞAK GRİSSİNİ KEPEKLİ 125 G",
+    "barkod": "8690504074397",
+    "deger": "60,00"
+  },
+  {
+    "urun_kodu": "743-01",
+    "urun_adi": "ALTINBAŞAK GRİSSİNİ ÇAVDARLI 125 G",
+    "barkod": "8690504074311",
+    "deger": "70,00"
+  },
+  {
+    "urun_kodu": "1162-05",
+    "urun_adi": "ALTINBAŞAK LABNELİ SANDVİÇ 60 G",
+    "barkod": "8690504116257",
+    "deger": "20,00"
+  },
+  {
+    "urun_kodu": "115-02",
+    "urun_adi": "ALTINBAŞAK TAHIL CİPSİ YOĞURT&MEVSİM YEŞİLLİKLİ 50 G x 20",
+    "barkod": "8690504115212",
+    "deger": "22,00"
+  },
+  {
+    "urun_kodu": "1146-04",
+    "urun_adi": "BİSKREM KAKAOLU 100 G",
+    "barkod": "8690504020233",
+    "deger": "25,00"
+  },
+  {
+    "urun_kodu": "1153-08",
+    "urun_adi": "BİSKREM RULO %50 FAZLA 150 G",
+    "barkod": "8690504115380",
+    "deger": "36,00"
+  },
+  {
+    "urun_kodu": "1153-00",
+    "urun_adi": "BİSKREM EXTRA KAKAO KR 184 G",
+    "barkod": "8690504115304",
+    "deger": "52,00"
+  },
+  {
+    "urun_kodu": "1148-00",
+    "urun_adi": "BİSKREM COOKIE 80 G",
+    "barkod": "8690504114802",
+    "deger": "25,00"
+  },
+  {
+    "urun_kodu": "1145-09",
+    "urun_adi": "BİSKREM COOKIE EXTRA 184 G",
+    "barkod": "8690504114598",
+    "deger": "52,00"
+  },
+  {
+    "urun_kodu": "1153-01",
+    "urun_adi": "BISKREM KAKAOLU POŞET 200 G",
+    "barkod": "8690504115014",
+    "deger": "50,00"
+  },
+  {
+    "barkod": "12",
+    "urun_adi": "321",
+    "urun_kodu": "2312",
+    "deger": "31"
+  }
+]
