@@ -43,9 +43,43 @@ const PaymentModal = ({ total, items = [], onClose, onProcessPayment }) => {
     }
   };
 
-  const handlePrint = () => {
-    // Implement print logic here or just assume it's done via browser/system
-    window.print();
+  const handlePrint = async () => {
+    setIsProcessing(true);
+    try {
+      const orderData = {
+        _id: Date.now(), // Temporary ID for receipt
+        items: items,
+        totalAmount: total,
+        paymentMethod: paymentMethod,
+        tableId: { number: 'Counter' },
+        date: new Date().toISOString()
+      };
+
+      const response = await fetch('/api/print/receipt', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          orderData,
+          type: 'cashier' 
+        }),
+      });
+
+      const data = await response.json();
+      
+      if (!data.success) {
+        throw new Error(data.error || 'Print failed');
+      }
+      
+      // Optional: Show success message
+      // alert('Receipt sent to printer!');
+    } catch (error) {
+      console.error('Printing error:', error);
+      alert(t('printError') || 'Failed to print receipt');
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
   const handleClose = () => {
@@ -172,7 +206,7 @@ const PaymentModal = ({ total, items = [], onClose, onProcessPayment }) => {
           </div>
 
           {/* Printable Receipt Area */}
-          <div className="print-area text-left p-4">
+          <div className="print-area text-left">
                <div className="text-center mb-6">
                    <h1 className="text-2xl font-bold uppercase tracking-wider border-b-2 border-black pb-2 mb-2">Boss POS</h1>
                    <p className="text-sm">{new Date().toLocaleString()}</p>
