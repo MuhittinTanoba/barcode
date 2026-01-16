@@ -119,9 +119,9 @@ const TableCart = ({ tableId, existingOrder, onOrderComplete, onClose }) => {
   };
 
   const formatCurrency = (amount) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('tr-TR', {
       style: 'currency',
-      currency: 'USD'
+      currency: 'TRY'
     }).format(amount);
   };
 
@@ -155,7 +155,7 @@ const TableCart = ({ tableId, existingOrder, onOrderComplete, onClose }) => {
               {titleOptions.map((option, i) => (
                 <li key={option._id?.$oid || option.name + i} className="text-xs text-muted-foreground mb-1">
                   <span>
-                    {option.name} {option.price ? <span className="text-accent font-medium">(+${option.price})</span> : ''}
+                    {option.name} {option.price ? <span className="text-accent font-medium">(+{option.price} TL)</span> : ''}
                   </span>
                   {option.subOptions && option.subOptions.length > 0 && 
                    option.subOptions.some(subOpt => options.includes(subOpt)) && 

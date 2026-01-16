@@ -132,7 +132,7 @@ const PaymentModal = ({ total, items = [], onClose, onProcessPayment }) => {
       <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
         <div className="bg-white rounded-xl shadow-xl max-w-sm w-full p-6">
           <h2 className="text-xl font-bold text-slate-900 mb-2">{t('amountTendered') || 'Amount Tendered'}</h2>
-          <p className="text-slate-500 mb-6">{t('totalAmount') || 'Total Amount'}: <span className="text-primary font-bold text-lg">${total.toFixed(2)}</span></p>
+          <p className="text-slate-500 mb-6">{t('totalAmount') || 'Total Amount'}: <span className="text-primary font-bold text-lg">{total.toFixed(2)} TL</span></p>
 
           <div className="mb-6">
             <input
@@ -182,7 +182,7 @@ const PaymentModal = ({ total, items = [], onClose, onProcessPayment }) => {
           {paymentMethod === 'cash' && change > 0 && (
             <div className="bg-slate-50 rounded-lg p-4 mb-6">
               <p className="text-slate-500 text-sm mb-1">{t('changeDue') || 'Change Due'}</p>
-              <p className="text-3xl font-bold text-green-600">${change.toFixed(2)}</p>
+              <p className="text-3xl font-bold text-green-600">{change.toFixed(2)} TL</p>
             </div>
           )}
 
@@ -234,7 +234,7 @@ const PaymentModal = ({ total, items = [], onClose, onProcessPayment }) => {
                                        )}
                                    </td>
                                    <td className="text-center py-2">{item.quantity}</td>
-                                   <td className="text-right py-2">${((item.unitPrice + (item.options?.reduce((a,b)=>a+(b.price||0),0)||0)) * item.quantity).toFixed(2)}</td>
+                                   <td className="text-right py-2">{((item.unitPrice + (item.options?.reduce((a,b)=>a+(b.price||0),0)||0)) * item.quantity).toFixed(2)} TL</td>
                                </tr>
                            ))}
                        </tbody>
@@ -244,16 +244,16 @@ const PaymentModal = ({ total, items = [], onClose, onProcessPayment }) => {
                <div className="border-t-2 border-black pt-4 mb-8">
                    <div className="flex justify-between text-lg font-bold mb-2">
                        <span>Total</span>
-                       <span>${total.toFixed(2)}</span>
+                       <span>{total.toFixed(2)} TL</span>
                    </div>
                    <div className="flex justify-between text-sm mb-1">
                        <span>Payment ({paymentMethod})</span>
-                       <span>${(paymentMethod === 'cash' ? (parseFloat(tenderedAmount)||total) : total).toFixed(2)}</span>
+                       <span>{(paymentMethod === 'cash' ? (parseFloat(tenderedAmount)||total) : total).toFixed(2)} TL</span>
                    </div>
                    {paymentMethod === 'cash' && change > 0 && (
                        <div className="flex justify-between text-sm">
                            <span>Change</span>
-                           <span>${change.toFixed(2)}</span>
+                           <span>{change.toFixed(2)} TL</span>
                        </div>
                    )}
                </div>

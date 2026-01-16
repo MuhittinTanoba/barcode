@@ -556,9 +556,9 @@ if (isSplitMode) {
   };
 
   const formatCurrency = (amount) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('tr-TR', {
       style: 'currency',
-      currency: 'USD'
+      currency: 'TRY'
     }).format(amount);
   };
 

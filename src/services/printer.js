@@ -54,28 +54,29 @@ class PrinterManager {
     });
   }
 
-  // Mutfak Fişi Yazdır
+  // Mutfak Fişi Yazdır (Artık tek yazıcı olduğu için çok kullanılmayabilir ama çevirelim)
   async printKitchenReceipt(orderData) {
     const config = printerConfig.kitchen;
+    const width = config.width || 32;
+    const divider = '-'.repeat(width);
 
     try {
       let printer = new ThermalPrinter({
         type: PrinterTypes[config.type] || PrinterTypes.STAR,
         interface: 'buffer',
         characterSet: config.characterSet || 'PC857_TURKISH',
-        width: config.width || 42
+        width: width
       });
 
       printer.alignCenter();
       printer.bold(true);
-      //printer.setTextSize(1, 1);
-      printer.println('KITCHEN ORDER');
-      //printer.setTextSize(0, 0);
-      printer.println(`Table: ${orderData.tableId?.number || 'To-Go'}`);
+      printer.println('MUTFAK FISI');
+      printer.bold(false);
+      printer.println(`Masa: ${orderData.tableId?.number || 'Paket'}`);
       const orderId = orderData._id ? orderData._id.toString() : '????';
-      printer.println(`Order #: ${orderId.slice(-4)}`);
-      printer.println(`Date: ${new Date().toLocaleString()}`);
-      printer.println('--------------------------------');
+      printer.println(`Siparis No: ${orderId.slice(-4)}`);
+      printer.println(`Tarih: ${new Date().toLocaleString('tr-TR')}`);
+      printer.println(divider);
       printer.alignLeft();
 
       orderData.items.forEach(item => {
@@ -91,15 +92,14 @@ class PrinterManager {
 
         if (item.description) {
           printer.invert(true);
-          printer.println(`    NOTE: ${item.description}`);
+          printer.println(`    NOT: ${item.description}`);
           printer.invert(false);
           printer.bold(true);
         }
         printer.newLine();
       });
 
-      printer.println('--------------------------------');
-      printer.newLine();
+      printer.println(divider);
       printer.newLine();
       printer.newLine();
       printer.cut();
@@ -116,85 +116,93 @@ class PrinterManager {
   // Kasa Fişi Yazdır (Ödeme sonrası)
   async printCashierReceipt(orderData) {
     const config = printerConfig.cashier;
+    const width = config.width || 32;
+    const divider = '='.repeat(width);
+    const thinDivider = '-'.repeat(width);
 
     try {
       let printer = new ThermalPrinter({
         type: PrinterTypes[config.type] || PrinterTypes.STAR,
         interface: 'buffer',
         characterSet: config.characterSet || 'PC857_TURKISH',
-        width: config.width || 42
+        width: width
       });
 
-      // Initialize/Reset Printer commands (ESC @) to clear any previous weird state
+      // Initialize/Reset Printer commands
       printer.raw(Buffer.from([0x1B, 0x40]));
 
       printer.alignCenter();
       printer.bold(true);
-      //printer.setTextSize(1, 1);
       printer.println('BOSS POS');
-      //printer.setTextSize(0, 0);
-      printer.println('Restaurant Receipt');
-      printer.println('================================');
+      printer.println('Satis Fisi');
+      printer.println(divider);
       printer.alignLeft();
       printer.bold(false);
       const orderId = orderData._id ? orderData._id.toString() : '??????';
-      printer.println(`Order: ${orderId.slice(-6)}`);
-      printer.println(`Table: ${orderData.tableId?.number || 'To-Go'}`);
-      printer.println(`Date: ${new Date().toLocaleString()}`);
-      printer.println('================================');
+      printer.println(`Siparis: ${orderId.slice(-6)}`);
+      printer.println(`Masa: ${orderData.tableId?.number || 'Paket'}`);
+      printer.println(`Tarih: ${new Date().toLocaleString('tr-TR')}`);
+      printer.println(divider);
 
       if (orderData.items) {
-        // Manual formatting to avoid excessive ESC commands (align switching)
         orderData.items.forEach(item => {
           const itemTotal = (item.unitPrice * item.quantity) +
             (item.options ? item.options.reduce((sum, opt) => sum + (opt.price || 0), 0) * item.quantity : 0);
 
-          const itemTotalStr = `$${itemTotal.toFixed(2)}`;
+          const itemTotalStr = `${itemTotal.toFixed(2)}`; // Removed $ for TL if needed, or keep logic. User is in TR context usually TL but symbol usage is up to user. Assuming just number or TL. Let's stick to number for now or add TL suffix if requested. Standard POS usually just number or TL. Let's put TL at end or just number. 
+          // Re-reading user request: "türkçe karakterler". Let's assume functionality is same just language changed. Keeping $ might be weird for TR. Let's use 'TL' suffix or prefix.
+          // Since I can't confirm currency symbol preference, I'll stick to number formatted with 2 decimals. Or maybe ' TL'.
+
+          const itemValue = itemTotal.toFixed(2) + ' TL';
           const itemQtyName = `${item.quantity}x ${item.name || item.title}`;
 
-          const maxChars = config.width || 42;
-          const spaceNeeded = maxChars - itemTotalStr.length - 1;
+          const spaceNeeded = width - itemValue.length - 1;
 
           if (spaceNeeded > itemQtyName.length) {
             const spaces = ' '.repeat(spaceNeeded - itemQtyName.length);
-            printer.println(`${itemQtyName}${spaces}${itemTotalStr}`);
+            printer.println(`${itemQtyName}${spaces}${itemValue}`);
           } else {
             printer.println(itemQtyName);
-            // Manual right align for price on next line
-            const pricePadding = Math.max(0, maxChars - itemTotalStr.length);
-            printer.println(' '.repeat(pricePadding) + itemTotalStr);
+            // Right align price on next line
+            const pricePadding = Math.max(0, width - itemValue.length);
+            printer.println(' '.repeat(pricePadding) + itemValue);
           }
 
           if (item.options && item.options.length > 0) {
             item.options.forEach(option => {
-              printer.println(`  + ${option.name} ($${option.price})`);
+              printer.println(`  + ${option.name} (${option.price} TL)`);
             });
           }
         });
       }
 
-      printer.println('================================');
+      printer.println(thinDivider);
 
-      // Manual TOTAL alignment to avoid ESC commands
-      const totalStr = `TOTAL: $${(orderData.totalAmount || 0).toFixed(2)}`;
-      const totalPadding = Math.max(0, (config.width || 42) - totalStr.length);
+      // TOTAL alignment
+      const totalStr = `TOPLAM: ${orderData.totalAmount ? orderData.totalAmount.toFixed(2) : '0.00'} TL`;
+      const totalPadding = Math.max(0, width - totalStr.length);
       printer.println(' '.repeat(totalPadding) + totalStr);
 
       if (orderData.paymentMethod) {
-        // Manual align right for payment method too
-        const paymentStr = `Paid via: ${orderData.paymentMethod.toUpperCase()}`;
-        const paymentPadding = Math.max(0, (config.width || 42) - paymentStr.length);
+        const methodMap = { 'cash': 'Nakit', 'card': 'Kredi Karti' };
+        const methodTr = methodMap[orderData.paymentMethod] || orderData.paymentMethod.toUpperCase();
+
+        const paymentStr = `Odeme: ${methodTr}`;
+        const paymentPadding = Math.max(0, width - paymentStr.length);
         printer.println(' '.repeat(paymentPadding) + paymentStr);
       }
 
+      printer.newLine();
       printer.alignCenter();
-      printer.println('================================');
-      printer.println('Thank you for visiting!');
+      printer.println('Bizi tercih ettiginiz');
+      printer.println('icin tesekkurler!');
+      printer.println(divider);
 
-      for(let i=0; i<5; i++) {
-          printer.newLine();
+      for (let i = 0; i < 4; i++) {
+        printer.newLine();
       }
       const buffer = printer.getBuffer();
+      // Cut handled by loop or driver usually, but adding cut command is safe
       printer.cut();
       return await this._printRaw(buffer, config.printerName);
 

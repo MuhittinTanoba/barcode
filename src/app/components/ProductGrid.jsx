@@ -29,7 +29,7 @@ const ProductCard = ({ product, onClick }) => {
           )}
         </div>
         <div className="flex items-center justify-between mt-2">
-          <p className="text-xl font-bold text-primary">${product.price?.toFixed(2)}</p>
+          <p className="text-xl font-bold text-primary">{product.price?.toFixed(2)} TL</p>
           <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />

@@ -48,3 +48,6 @@ next-env.d.ts
 #db
 *.db
 orders.db
+
+#config
+src/app/config/printers.js

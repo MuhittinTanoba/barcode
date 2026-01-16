@@ -222,7 +222,7 @@ const ActiveOrders = () => {
                         {item?.title || item?.name || 'Unknown Product'} × {item.quantity}
                       </span>
                       <span className="font-semibold text-foreground">
-                        ${((item?.unitPrice || 0) * item.quantity).toFixed(2)}
+                        {((item?.unitPrice || 0) * item.quantity).toFixed(2)} TL
                       </span>
                     </div>
                     {item.description && (
@@ -243,7 +243,7 @@ const ActiveOrders = () => {
                 <div className="flex justify-between items-center">
                   <span className="font-semibold text-foreground">Total</span>
                   <span className="text-xl font-bold text-primary">
-                    ${order.totalAmount?.toFixed(2) || '0.00'}
+                    {order.totalAmount?.toFixed(2) || '0.00'} TL
                   </span>
                 </div>
               </div>

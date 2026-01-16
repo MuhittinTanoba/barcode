@@ -35,7 +35,7 @@ function renderOptions(options, t, level = 0) {
             {titleOptions.map((option, i) => (
               <li key={option._id?.$oid || option.name + i} className="text-xs text-slate-600 mb-1">
                 <span>
-                  {option.name} {option.price ? `(+${option.price}$)` : ''}
+                  {option.name} {option.price ? `(+${option.price} TL)` : ''}
                 </span>
                 {/* Only show sub-options if this option has sub-options and they are selected */}
                 {option.subOptions && option.subOptions.length > 0 && 
@@ -117,8 +117,8 @@ const Cart = ({ onCheckout, orderType = 'dine_in' }) => {
               
               <div className="text-right min-w-0">
                 <div className="text-sm font-semibold text-slate-900">
-                  ${((item.unitPrice * item.quantity) + 
-                     (item.options.reduce((sum, opt) => sum + opt.price, 0) * item.quantity)).toFixed(2)}
+                  {((item.unitPrice * item.quantity) + 
+                     (item.options.reduce((sum, opt) => sum + opt.price, 0) * item.quantity)).toFixed(2)} TL
                 </div>
               </div>
               
@@ -138,7 +138,7 @@ const Cart = ({ onCheckout, orderType = 'dine_in' }) => {
       <div className="mt-6 pt-6 border-t border-slate-200">
         <div className="flex justify-between items-center mb-6">
           <span className="text-lg font-semibold text-primary">{t('cart.total')}:</span>
-          <span className="text-2xl font-bold text-primary">${getTotalAmount().toFixed(2)}</span>
+          <span className="text-2xl font-bold text-primary">{getTotalAmount().toFixed(2)} TL</span>
         </div>
         
         <button

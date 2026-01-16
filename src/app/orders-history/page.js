@@ -61,7 +61,7 @@ export default function OrderHistory() {
                                     </div>
                                 </td>
                                 <td className="px-6 py-4 font-medium text-primary">
-                                    ${order.total?.toFixed(2)}
+                                    {order.total?.toFixed(2)} TL
                                 </td>
                                 <td className="px-6 py-4 text-slate-600 capitalize">
                                     {order.paymentMethod}

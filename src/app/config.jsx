@@ -31,9 +31,9 @@ const   appConfig = {
   
   // Currency and locale configuration
   currency: {
-    symbol: '$',
-    code: 'USD',
-    locale: 'en-US'
+    symbol: 'TL',
+    code: 'TRY',
+    locale: 'tr-TR'
   },
   
   // Date format configuration
