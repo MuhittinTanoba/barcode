@@ -3,162 +3,3724 @@
     "urun_kodu": "111-01",
     "urun_adi": "ÜLKER PÖTİBÖR 175 G",
     "barkod": "8690504011101",
-    "deger": "30,00"
+    "deger": "30,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "112-00",
     "urun_adi": "ÜLKER PÖTİBÖR KAKAOLU 175 G",
     "barkod": "8690504011200",
-    "deger": "30,00"
+    "deger": "30,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "117-00",
     "urun_adi": "ÜLKER PÖTİBÖR ÇİFTE KAVRULMUŞ 175 G",
     "barkod": "8690504011705",
-    "deger": "30,00"
+    "deger": "30,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "114-01",
     "urun_adi": "ÜLKER PÖTİBÖR 450 G",
     "barkod": "8690504011408",
-    "deger": "70,00"
+    "deger": "70,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "115-00",
     "urun_adi": "ÜLKER PÖTİBÖR KAKAOLU 450 G",
     "barkod": "8690504011507",
-    "deger": "70,00"
+    "deger": "70,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "117-01",
     "urun_adi": "ÜLKER PÖTİBÖR ÇİFTE KAVRULMUŞ 450 G",
     "barkod": "8690504011712",
-    "deger": "70,00"
+    "deger": "70,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "172-06",
     "urun_adi": "ÜLKER PÖTİBÖR 800 G",
     "barkod": "8690504017264",
-    "deger": "112,00"
+    "deger": "112,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "35-03",
     "urun_adi": "ÜLKER BEBE BİSKÜVİSİ 172 G",
     "barkod": "8690504014300",
-    "deger": "40,00"
+    "deger": "40,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "145-00",
     "urun_adi": "ÜLKER BEBE BİSKÜVİSİ 400 G",
     "barkod": "8690504014508",
-    "deger": "83,00"
+    "deger": "83,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "168-08",
     "urun_adi": "ÜLKER BEBE BİSKÜVİSİ 800 G",
     "barkod": "8690504016885",
-    "deger": "158,00"
+    "deger": "158,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "172-07",
     "urun_adi": "ÜLKER FİNGER 750 G",
     "barkod": "8690504017271",
-    "deger": "120,00"
+    "deger": "120,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "116-04",
     "urun_adi": "ALTINBAŞAK LİGHT KLASİK 46 G",
     "barkod": "8690504011606",
-    "deger": "13,00"
+    "deger": "13,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "116-01",
     "urun_adi": "ALTINBAŞAK LİGHT KLASİK 5x46 G",
     "barkod": "8690504011613",
-    "deger": "62,00"
+    "deger": "62,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "116-09",
     "urun_adi": "ALTINBAŞAK ÇÖREKOTLU VE KİNOALI 40 G",
     "barkod": "8690504011699",
-    "deger": "14,00"
+    "deger": "14,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "118-02",
     "urun_adi": "ALTINBAŞAK ÇÖREKOTLU VE KİNOALI 5x40 G",
     "barkod": "8690504011828",
-    "deger": "65,00"
+    "deger": "65,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "743-08",
     "urun_adi": "ALTINBAŞAK GRİSSİNİ SADE 125 G",
     "barkod": "8690504074380",
-    "deger": "60,00"
+    "deger": "60,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "743-09",
     "urun_adi": "ALTINBAŞAK GRİSSİNİ KEPEKLİ 125 G",
     "barkod": "8690504074397",
-    "deger": "60,00"
+    "deger": "60,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "743-01",
     "urun_adi": "ALTINBAŞAK GRİSSİNİ ÇAVDARLI 125 G",
     "barkod": "8690504074311",
-    "deger": "70,00"
+    "deger": "70,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "1162-05",
     "urun_adi": "ALTINBAŞAK LABNELİ SANDVİÇ 60 G",
     "barkod": "8690504116257",
-    "deger": "20,00"
+    "deger": "20,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "115-02",
     "urun_adi": "ALTINBAŞAK TAHIL CİPSİ YOĞURT&MEVSİM YEŞİLLİKLİ 50 G x 20",
     "barkod": "8690504115212",
-    "deger": "22,00"
+    "deger": "22,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "1146-04",
     "urun_adi": "BİSKREM KAKAOLU 100 G",
     "barkod": "8690504020233",
-    "deger": "25,00"
+    "deger": "25,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "1153-08",
     "urun_adi": "BİSKREM RULO %50 FAZLA 150 G",
     "barkod": "8690504115380",
-    "deger": "36,00"
+    "deger": "36,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "1153-00",
     "urun_adi": "BİSKREM EXTRA KAKAO KR 184 G",
     "barkod": "8690504115304",
-    "deger": "52,00"
+    "deger": "52,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "1148-00",
     "urun_adi": "BİSKREM COOKIE 80 G",
     "barkod": "8690504114802",
-    "deger": "25,00"
+    "deger": "25,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "1145-09",
     "urun_adi": "BİSKREM COOKIE EXTRA 184 G",
     "barkod": "8690504114598",
-    "deger": "52,00"
+    "deger": "52,00",
+    "category": "urun"
   },
   {
     "urun_kodu": "1153-01",
     "urun_adi": "BISKREM KAKAOLU POŞET 200 G",
     "barkod": "8690504115014",
-    "deger": "50,00"
+    "deger": "50,00",
+    "category": "urun"
   },
   {
     "barkod": "12",
     "urun_adi": "321",
     "urun_kodu": "2312",
-    "deger": "31"
+    "deger": "31",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "870-06",
+    "urun_adi": "CANPARE FINDIKLI BİSKÜVİ 81 G",
+    "barkod": "8690504086529",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "870-09",
+    "urun_adi": "CANPARE ÇİKOLATALI BİSKÜVİ 81 G",
+    "barkod": "8690504087038",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1312-00",
+    "urun_adi": "ÇOKOMEL SADE 3x12 G",
+    "barkod": "8690504131205",
+    "deger": "18,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1312-01",
+    "urun_adi": "ÇOKOMEL ÇİLEKLİ 3x12 G",
+    "barkod": "8690504131212",
+    "deger": "18,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1316-01",
+    "urun_adi": "ÇOKOMEL SADE 15x12 G",
+    "barkod": "8690504131618",
+    "deger": "85,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1316-00",
+    "urun_adi": "ÇOKOMEL ÇİLEKLİ 15x12 G",
+    "barkod": "8690504131601",
+    "deger": "85,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1310-01",
+    "urun_adi": "ÇOKOMEL DEV SADE 22 G",
+    "barkod": "8690504131014",
+    "deger": "10,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1310-02",
+    "urun_adi": "ÇOKOMEL DEV MUZLU 22 G",
+    "barkod": "8690504131021",
+    "deger": "10,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "79-02",
+    "urun_adi": "ÇOKOPRENS ATIŞTIRMALIK 81 G",
+    "barkod": "8690504008002",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "78-00",
+    "urun_adi": "ÇOKOPRENS SANDVİÇ BİSKÜVİ 10x30 G",
+    "barkod": "8690504007807",
+    "deger": "63,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "90-08",
+    "urun_adi": "ÇOKOPRENS SANDVİÇ BİSKÜVİ 30 G",
+    "barkod": "8690504009085",
+    "deger": "8,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1174-09",
+    "urun_adi": "ÜLKER ÇOKOTURTA TART PORTAKALLI 180 G",
+    "barkod": "8690504117490",
+    "deger": "40,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1188-07",
+    "urun_adi": "HANIMELLER ÇOKODAMLA RULO 82 G",
+    "barkod": "8690504012139",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1132-07",
+    "urun_adi": "HANIMELLER FINDIKLI RULO 82 G",
+    "barkod": "8690504011804",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1132-04",
+    "urun_adi": "HANIMELLER FRAMBUAZ SOSLU RULO 94.5 G",
+    "barkod": "8690504113249",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1190-05",
+    "urun_adi": "HANIMELLER MAHLEPLİ TUZLU 81 G",
+    "barkod": "8690504119050",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1186-00",
+    "urun_adi": "HANIMELLER LİMONLU VE BEYAZ ÇİKOLATALI KUR. 138 G",
+    "barkod": "8690766118600",
+    "deger": "50,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "119-00",
+    "urun_adi": "HANIMELLER ÇOKODAMLA POŞET 150 G",
+    "barkod": "8690504011903",
+    "deger": "40,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "114-02",
+    "urun_adi": "HANIMELLER ASORTİ POŞET 150 G",
+    "barkod": "8690504011422",
+    "deger": "40,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "119-02",
+    "urun_adi": "HANIMELLER TUZLU KARMA POŞET 150 G",
+    "barkod": "8690504011927",
+    "deger": "40,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1134-00",
+    "urun_adi": "HANIMELLER TEREYAĞLI POŞET 152 G",
+    "barkod": "8690504113409",
+    "deger": "40,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1163-04",
+    "urun_adi": "HANIMELLER FRAMBUAZ SOSLU KURABİYE POŞET 150 G",
+    "barkod": "8690504116349",
+    "deger": "43,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "81-04",
+    "urun_adi": "HAYLAYF BİSKÜVİ 64 G",
+    "barkod": "8690504008101",
+    "deger": "13,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "81-08",
+    "urun_adi": "HAYLAYF BİSKÜVİ 4x64 G",
+    "barkod": "8690504008187",
+    "deger": "47,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1078-01",
+    "urun_adi": "İKRAM KREMALI FINDIKLI 84 G",
+    "barkod": "8690504010203",
+    "deger": "23,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1078-02",
+    "urun_adi": "İKRAM KREMALI ÇİKOLATALI 84 G",
+    "barkod": "8690504010104",
+    "deger": "23,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1077-01",
+    "urun_adi": "İKRAM KREMALI ÇİKOLATALI 3x84 G",
+    "barkod": "8690504110231",
+    "deger": "65,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1077-02",
+    "urun_adi": "İKRAM KREMALI FINDIKLI 3x84 G",
+    "barkod": "8690504110224",
+    "deger": "65,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "695-02",
+    "urun_adi": "KAT KAT TAT ANTEP FISTIKLI MİLFÖY 28 G",
+    "barkod": "8690504069522",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "695-07",
+    "urun_adi": "KAT KAT TAT FINDIKLI 25 G",
+    "barkod": "8690504069003",
+    "deger": null,
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "695-08",
+    "urun_adi": "KAT KAT TAT ÇİLEKLİ 28 G",
+    "barkod": "8690504069409",
+    "deger": "10,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1098-04",
+    "urun_adi": "ÜLKER KREMALI BİSKÜVİ ÇİLEKLİ 61 G",
+    "barkod": "8690504109846",
+    "deger": "13,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1110-03",
+    "urun_adi": "ÜLKER KREMALI BİSKÜVİ MUZLU 61 G",
+    "barkod": "8690504111030",
+    "deger": "13,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1099-08",
+    "urun_adi": "KREMALI SANDVİÇ BİSKÜVİ 61 G",
+    "barkod": "8690766109998",
+    "deger": "13,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1099-09",
+    "urun_adi": "KREMALI SANDVİÇ BİSKÜVİ 4x61 G",
+    "barkod": "8690766109998",
+    "deger": "50,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1111-07",
+    "urun_adi": "KREMALI SANDVİÇ BİSKÜVİ 8x61 G",
+    "barkod": "8690504111177",
+    "deger": "95,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1098-06",
+    "urun_adi": "ÜLKER KREMALI BİSKÜVİ ÇİLEKLİ 8x61 G",
+    "barkod": "8690504109860",
+    "deger": "95,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "86-09",
+    "urun_adi": "DORE SADE KREMALI DOLGULU ÇİKOLATALI BİSKÜVİ 86 G",
+    "barkod": "8690504008699",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "829-08",
+    "urun_adi": "SAKLIKÖY ÇİK. VE SÜTLÜ KR. 100 G",
+    "barkod": "8690504082996",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "834-08",
+    "urun_adi": "SAKLIKÖY SÜTLÜ KR. BİSKÜVİ 100 G",
+    "barkod": "8690504082651",
+    "deger": "23,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "841-09",
+    "urun_adi": "SAKLIKÖY ÇİK. KR. BİSKÜVİ 87 G",
+    "barkod": "8690504083177",
+    "deger": "23,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "863-03",
+    "urun_adi": "SAKLIKÖY SÜTLÜ KR. BİSKÜVİ 3x88 G",
+    "barkod": "8690504082668",
+    "deger": "58,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1161-08",
+    "urun_adi": "SAKLIKÖY FRAMBUAZ KREMALI CHEESECAKE BİSKÜVİ 100 G",
+    "barkod": "8690504116189",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "872-09",
+    "urun_adi": "MCVITIE'S BİTTER ÇİKOLATA VE SÜTLÜ KR. BİSK. 90 G",
+    "barkod": "8690504087298",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "875-08",
+    "urun_adi": "MCVITIE'S KARAMEL VE TARÇIN KR. BİSK. 88 G",
+    "barkod": "8690504087588",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "873-05",
+    "urun_adi": "MCVITIE'S DIGESTIVE KARAMELLİ BİSK. 120 G",
+    "barkod": "8690766087357",
+    "deger": "50,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "379-10",
+    "urun_adi": "MCVITIE'S SÜTLÜ ÇİK. KAP. BİSKÜVİ 150 G",
+    "barkod": "5941664011702",
+    "deger": "120,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "379-12",
+    "urun_adi": "MCVITIE'S ZERO BİTTER ÇİK. KAP. BİSKÜVİ 150 G",
+    "barkod": "5941664011740",
+    "deger": "98,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "379-11",
+    "urun_adi": "MCVITIE'S ORIGINAL BİSK. 133 G",
+    "barkod": "5941664011696",
+    "deger": "38,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "379-13",
+    "urun_adi": "MCVITIE'S ZERO SUG. ORIGINAL BİSK. 133 G",
+    "barkod": "5941664011733",
+    "deger": "45,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "72-00",
+    "urun_adi": "PROBİS SANDVİÇ BİSKÜVİ 10x28 G",
+    "barkod": "8690504007203",
+    "deger": "80,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "79-08",
+    "urun_adi": "PROBİS ATIŞTIRMALIK 75 G",
+    "barkod": "8690504961482",
+    "deger": "23,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "92-00",
+    "urun_adi": "ÇİZİ KRAKER BİSKÜVİ 70 G",
+    "barkod": "8690766009205",
+    "deger": "15,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "92-01",
+    "urun_adi": "ÇİZİ KRAKER BİSKÜVİ 4x70 G",
+    "barkod": "8690766009212",
+    "deger": "56,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "95-04",
+    "urun_adi": "ÇİZİVİÇ PEYNİRLİ SAND. KRA. 82 G",
+    "barkod": "8690504009542",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "95-03",
+    "urun_adi": "ÇİZİVİÇ PEYNİRLİ SAND. KRA. 3x82 G",
+    "barkod": "8690504009245",
+    "deger": "58,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1087-07",
+    "urun_adi": "KRİSPİ TIRTIKLI KRAKER BAHARAT ÇEŞNİLİ 48 G",
+    "barkod": "8690504108771",
+    "deger": "18,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1084-02",
+    "urun_adi": "KRİSPİ TIRTIKLI KRAKER ACILI 48 G",
+    "barkod": "8690504108429",
+    "deger": "18,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1088-02",
+    "urun_adi": "KRİSPİ ACILI ÇUBUK KRAKER 43 G",
+    "barkod": "8690504108825",
+    "deger": "10,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1088-03",
+    "urun_adi": "KRİSPİ BAHARATLI ÇUBUK KRAKER 43 G",
+    "barkod": "8690504108832",
+    "deger": "10,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1088-04",
+    "urun_adi": "KRİSPİ PEYNİRLİ ÇUBUK KRAKER 43 G",
+    "barkod": "8690504108849",
+    "deger": "10,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "184-07",
+    "urun_adi": "SADE ÇUBUK KRAKER 40 G",
+    "barkod": "8690504017301",
+    "deger": "6,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1178-05",
+    "urun_adi": "SADE ÇUBUK KRAKER 80 G",
+    "barkod": "8690504117858",
+    "deger": "12,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1905-06",
+    "urun_adi": "TAÇ KRAKER 76 G",
+    "barkod": "8690504009603",
+    "deger": "15,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1905-05",
+    "urun_adi": "TAÇ KRAKER 3x76 G",
+    "barkod": "8690504190554",
+    "deger": "43,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "245-01",
+    "urun_adi": "ÜLKER SUSAMLI ÇUBUK KR. 45 G",
+    "barkod": "8690504024392",
+    "deger": "12,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1178-02",
+    "urun_adi": "ÜLKER SUSAMLI ÇUBUK KR. 70 G",
+    "barkod": "8690504117827",
+    "deger": "17,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "853-01",
+    "urun_adi": "9 KAT TAT İNCE İNCE ÇİLEKLİ 114 G",
+    "barkod": "8690504085317",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "855-09",
+    "urun_adi": "9 KAT TAT İNCE İNCE FINDIKLI 114 G",
+    "barkod": "8690504085591",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "857-03",
+    "urun_adi": "9 KAT TAT İNCE İNCE H. CEVİZLİ 114 G",
+    "barkod": "8690766085735",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "860-09",
+    "urun_adi": "9 KAT TAT GOFRET PORTAKALLI 39 G",
+    "barkod": "8690504086093",
+    "deger": "12,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "861-02",
+    "urun_adi": "9 KAT TAT GOFRET MUZLU 39 G",
+    "barkod": "8690504019404",
+    "deger": "12,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "861-03",
+    "urun_adi": "9 KAT TAT GOFRET FINDIKLI 39 G",
+    "barkod": "8690504019503",
+    "deger": "12,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "864-04",
+    "urun_adi": "RULOKAT FINDIKLI KREMALI 42 G",
+    "barkod": "8690504086444",
+    "deger": "19,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "864-07",
+    "urun_adi": "RULOKAT FINDIKLI KREMALI 170 G",
+    "barkod": "8690766086473",
+    "deger": "70,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "406-02",
+    "urun_adi": "ÜLKER GOFRET FINDIKLI 220 G",
+    "barkod": "8690766040451",
+    "deger": "53,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "406-03",
+    "urun_adi": "ÜLKER GOFRET VANİLYALI 220 G",
+    "barkod": "8690504040637",
+    "deger": "53,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "632-02",
+    "urun_adi": "8 KEK MUZLU 55 G",
+    "barkod": "8690504063223",
+    "deger": "13,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "656-06",
+    "urun_adi": "8 KEK ÇİKOLATALI 55 G",
+    "barkod": "8690504065661",
+    "deger": "13,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "656-02",
+    "urun_adi": "8 KEK ÇİLEKLİ 55 G",
+    "barkod": "8690504065623",
+    "deger": "13,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "634-07",
+    "urun_adi": "8 KEK ORMAN MEYVELİ 55 G",
+    "barkod": "8690504063476",
+    "deger": "55,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "370-02",
+    "urun_adi": "ALBENİ KEK 43 G",
+    "barkod": "8690504033899",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "817-02",
+    "urun_adi": "DANKEK PÖTİ HİNDİSTANCEVİZLİ 35 G",
+    "barkod": "8690504079729",
+    "deger": "10,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "817-03",
+    "urun_adi": "DANKEK PÖTİ HAVUÇLU TARÇINLI 35 G",
+    "barkod": "8690504079767",
+    "deger": "10,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "817-05",
+    "urun_adi": "DANKEK PÖTİ KAKAOLU 35 G",
+    "barkod": "8690504079279",
+    "deger": "10,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "817-06",
+    "urun_adi": "DANKEK PÖTİ MEYVELİ 35 G",
+    "barkod": "8690504079323",
+    "deger": "10,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "677-06",
+    "urun_adi": "KEKSTRA JÖLEBOL PORTAKALLI 40 G",
+    "barkod": "8690504067009",
+    "deger": "11,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "677-07",
+    "urun_adi": "KEKSTRA JÖLEBOL ÇİLEKLİ 40 G",
+    "barkod": "8690504067108",
+    "deger": "11,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "774-01",
+    "urun_adi": "KEKSTRA KONFETİ 38 G",
+    "barkod": "8690504077411",
+    "deger": "14,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "823-00",
+    "urun_adi": "KEKSTRA MİNİ ÇİLEKLİ 150 G",
+    "barkod": "8690766082307",
+    "deger": "55,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "808-09",
+    "urun_adi": "O'LALA SUFLE KEK 70 G",
+    "barkod": "8690504080893",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "813-03",
+    "urun_adi": "O'LALA SUFLE KEK FRAMBUAZLI 70 G",
+    "barkod": "8690504081333",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "816-06",
+    "urun_adi": "ÜLKER O'LALA SUFLE MİNİ 162 G",
+    "barkod": "8690504081661",
+    "deger": "63,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "676-01",
+    "urun_adi": "OLALA TİRAMİSU 45 G",
+    "barkod": "8690504067610",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1033-04",
+    "urun_adi": "DANKEK TART KEK ÇİLEKLİ 180 G",
+    "barkod": "8690504103349",
+    "deger": "80,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "644-04",
+    "urun_adi": "DANKEK LOKMALIK ÜZÜMLÜ 160 G",
+    "barkod": "8690504064367",
+    "deger": "50,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "644-08",
+    "urun_adi": "DANKEK LOKMALIK KAKAOLU 160 G",
+    "barkod": "8690504064374",
+    "deger": "50,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "644-09",
+    "urun_adi": "DANKEK LOKMALIK HAVUÇLU TARÇINLI 160 G",
+    "barkod": "8690504064428",
+    "deger": "50,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "804-03",
+    "urun_adi": "DANKEK LOKMALIK HİNDİSTAN CEVİZLİ 160 G",
+    "barkod": "8690504080435",
+    "deger": "50,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "823-09",
+    "urun_adi": "DANKEK TART MİNİ ÇİLEKLİ 150 G",
+    "barkod": "8690504082392",
+    "deger": "55,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "678-06",
+    "urun_adi": "DANKEK BATON KEK MOZAIK 200 G",
+    "barkod": "8690504067863",
+    "deger": "55,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "678-07",
+    "urun_adi": "DANKEK BATON KEK MEYVELİ 200 G",
+    "barkod": "8690504067870",
+    "deger": "55,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "678-08",
+    "urun_adi": "DANKEK BATON KEK KAKAOLU 200 G",
+    "barkod": "8690504067887",
+    "deger": "55,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "678-01",
+    "urun_adi": "DANKEK RULO PASTA ÇİKOLATALI 235 G",
+    "barkod": "8690504067818",
+    "deger": "70,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "678-02",
+    "urun_adi": "DANKEK RULO PASTA MUZLU 235 G",
+    "barkod": "8690504067825",
+    "deger": "70,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "668-04",
+    "urun_adi": "DANKEK RULO PASTA ÇİLEKLİ 235 G",
+    "barkod": "8690504066828",
+    "deger": "70,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "370-00",
+    "urun_adi": "DANKEK MOUSSE CAKE 45 G",
+    "barkod": "8690504037002",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "656-03",
+    "urun_adi": "DANKEK MAGMA KARAMELLİ 65 G",
+    "barkod": "8690504065630",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "656-04",
+    "urun_adi": "DANKEK MAGMA ÇİKOLATALI 65 G",
+    "barkod": "8690504065647",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1429-05",
+    "urun_adi": "ÜLKER KARE ÇİKOLATA SÜTLÜ 60 G",
+    "barkod": "8690504142959",
+    "deger": "70,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1429-07",
+    "urun_adi": "ÜLKER KARE ÇİKOLATA %60 BİTTER 60 G",
+    "barkod": "8690504142973",
+    "deger": "70,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1429-08",
+    "urun_adi": "ÜLKER KARE ÇİKOLATA %80 BİTTER 60 G",
+    "barkod": "8690504142980",
+    "deger": "70,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1450-06",
+    "urun_adi": "ÜLKER KARE ÇİKOLATA FINDIKLI 60 G",
+    "barkod": "8690504145066",
+    "deger": "75,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1576-04",
+    "urun_adi": "ÜLKER KARE ÇİKOLATA ANTEP FISTIKLI 65 G",
+    "barkod": "8690504157649",
+    "deger": "100,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1576-05",
+    "urun_adi": "ÜLKER KARE ÇİKOLATA ANT. FIST. %60 BİTTER 65 G",
+    "barkod": "8690504157656",
+    "deger": "100,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1576-09",
+    "urun_adi": "ÜLKER KARE ÇİKOLATA ANTEP FISTIKLI SÜTLÜ 65 G",
+    "barkod": "8690504157694",
+    "deger": "100,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1410-09",
+    "urun_adi": "ÜLKER KARE ÇİKOLATA BÜTÜN FINDIKLI 65 G",
+    "barkod": "8690504141099",
+    "deger": "80,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1416-01",
+    "urun_adi": "ÜLKER KARE ÇİKOLATA BÜTÜN ANTEP FISTIKLI 65 G",
+    "barkod": "8690504141617",
+    "deger": "110,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1416-02",
+    "urun_adi": "ÜLKER KARE ÇİKOLATA BÜTÜN ANTEP FISTIKLI BİTTER 65 G",
+    "barkod": "8690504141624",
+    "deger": "110,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1416-04",
+    "urun_adi": "ÜLKER KARE ÇİKOLATA BÜTÜN ANTEP FISTIKLI BEYAZ 65 G",
+    "barkod": "8690504141648",
+    "deger": "110,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "262-08",
+    "urun_adi": "ÜLKER BE HAPPY TABLET ÇİLEKLİ 88 G",
+    "barkod": "8683508026288",
+    "deger": "110,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1420-09",
+    "urun_adi": "ÜLKER ÇİKOLATA FINDIK RÜYASI BATON 40,5 G",
+    "barkod": "8690504142096",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1420-05",
+    "urun_adi": "ÜLKER ÇİKOLATA FINDIK RÜYASI KARE 75 G",
+    "barkod": "8683508142056",
+    "deger": "70,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "231-03",
+    "urun_adi": "ÜLKER NAPOLİTEN ÇİKOLATA SÜTLÜ 33 G",
+    "barkod": "8690504023135",
+    "deger": "45,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1496-00",
+    "urun_adi": "ÜLKER ÇİKOLATA TATLI SERİSİ MIX 120 G",
+    "barkod": "8690504149606",
+    "deger": "120,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1495-00",
+    "urun_adi": "ÜLKER ÇİKOLATA TATLI SERİSİ SÜTLÜ 120 G",
+    "barkod": "8690504149507",
+    "deger": "120,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1359-01",
+    "urun_adi": "ÜLKER ÇİKOLATALI GOFRET 36 G",
+    "barkod": "8690504135913",
+    "deger": "16,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1366-07",
+    "urun_adi": "ÜLKER ÇİKOLATALI GOFRET BEYAZ 35 G",
+    "barkod": "8690504136521",
+    "deger": "16,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1360-01",
+    "urun_adi": "ÜLKER ÇİKOLATALI GOFRET BİTTER 36 G",
+    "barkod": "8690504085720",
+    "deger": "16,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1365-01",
+    "urun_adi": "ÇİKOLATALI GOFRET MAXI 47 G",
+    "barkod": "8690504136514",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1355-06",
+    "urun_adi": "ÇİKOLATALI GOFRET 4x36 G",
+    "barkod": "8690504135562",
+    "deger": "63,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1363-04",
+    "urun_adi": "ÇİKOLATALI GOFRET MİNİ 82 G",
+    "barkod": "8690504136347",
+    "deger": "58,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1365-00",
+    "urun_adi": "ÇİKOLATALI GOFRET EKSTRA BOL FINDIKLI 45 G",
+    "barkod": "8690504136507",
+    "deger": "23,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "390-09",
+    "urun_adi": "ÜLKER METRO 36 G",
+    "barkod": "8690504039099",
+    "deger": "15,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "393-03",
+    "urun_adi": "ÜLKER METRO 4x36 G",
+    "barkod": "8690504039334",
+    "deger": "65,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1357-09",
+    "urun_adi": "METRO MİNİ 102 G",
+    "barkod": "8690504135791",
+    "deger": "58,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "653-09",
+    "urun_adi": "LAVİVA BATON ÇİKOLATA 35 G",
+    "barkod": "8690504065395",
+    "deger": "27,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "652-09",
+    "urun_adi": "LAVİVA SELECTION GOF. SÜTLÜ 45 G",
+    "barkod": "8690504065296",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "0505-05",
+    "urun_adi": "COCOSTAR BAR 25 G",
+    "barkod": "8690504050056",
+    "deger": "13,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "500-07",
+    "urun_adi": "COCOSTAR ATIŞTIRMALIK 66 G",
+    "barkod": "8690766050078",
+    "deger": "28,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "500-05",
+    "urun_adi": "COCOSTAR ATIŞTIRMALIK 154 G",
+    "barkod": "8690504050056",
+    "deger": "58,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "395-00",
+    "urun_adi": "HALLEY ÇİKOLATA PASTA 30 G",
+    "barkod": "8690504011101",
+    "deger": "12,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1866-08",
+    "urun_adi": "HALLEY ÇİKOLATA PASTA 8x30 G",
+    "barkod": "8690504034735",
+    "deger": "95,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1869-04",
+    "urun_adi": "HALLEY KARADUTLU 7x33,7 G",
+    "barkod": "8690504036210",
+    "deger": "95,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "397-07",
+    "urun_adi": "HALLEY MİNİ GRANÜLLÜ 66 G",
+    "barkod": "8690766037116",
+    "deger": "27,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "367-08",
+    "urun_adi": "HALLEY GRANÜLLÜ 3x66 G",
+    "barkod": "8690504036319",
+    "deger": "80,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1869-02",
+    "urun_adi": "HALLEY MİNİ KARADUTLU 74 G",
+    "barkod": "8690504136330",
+    "deger": "27,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "901-00",
+    "urun_adi": "ALPELLA 3GEN GOFRET BEYAZ 28 G",
+    "barkod": "8690504090106",
+    "deger": "16,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1363-06",
+    "urun_adi": "ÜLKER MİNİ ÇOKLU KARMA POŞET 91 G",
+    "barkod": "8690504136361",
+    "deger": "58,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "398-06",
+    "urun_adi": "PİKO PORTAKALLI 18 G",
+    "barkod": "8690504114925",
+    "deger": "10,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "270-01",
+    "urun_adi": "HOBBY BAR 25 G",
+    "barkod": "8690504027010",
+    "deger": "10,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1272-00",
+    "urun_adi": "MİNİ HOBBY BAR 600 G",
+    "barkod": "8690504127208",
+    "deger": "245,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1667-07",
+    "urun_adi": "YILDIZ DAMLA SAKIZ AROMALI 100x1,4 G",
+    "barkod": "8690504166450",
+    "deger": "120,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2252-01",
+    "urun_adi": "YILDIZ DAMLA SAKIZ AROMALI 7 G",
+    "barkod": "8690840225200",
+    "deger": "2,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2252-05",
+    "urun_adi": "YILDIZ DAMLA SAKIZ AROMALI 3x7 G",
+    "barkod": "8690840225255",
+    "deger": "5,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2289-73",
+    "urun_adi": "ONEO BUBBLE DEV DRAJE ŞEKERSİZ 76 G",
+    "barkod": "8690840228973",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2283-06",
+    "urun_adi": "ONEO BUBBLE DEV DRAJE ÇİL. VE MUZ. MILKSHAKE ARO. 76 G",
+    "barkod": "8690840228362",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2280-04",
+    "urun_adi": "ONEO DOPDOLU MEYVE AROMALI 76 G",
+    "barkod": "8690840228041",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2280-05",
+    "urun_adi": "ONEO DOPDOLU NANE AROMALI 76 G",
+    "barkod": "8690840228058",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "537-06",
+    "urun_adi": "KREMİNİ ÇİLEKLİ TOFFE STICK 10LU 44 G",
+    "barkod": "8690840053766",
+    "deger": "12,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "537-07",
+    "urun_adi": "KREMİNİ AHUDUDU TOFFE STICK 10LU 44 G",
+    "barkod": "8690840053773",
+    "deger": "12,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1672000",
+    "urun_adi": "ETİ CANGA 45G X 16 TV",
+    "barkod": "8690526047256",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1884000",
+    "urun_adi": "ETİ CANGA BITTER 45G X 16",
+    "barkod": "8690526078403",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1227300",
+    "urun_adi": "ETİ CANGA GOLD 45G X 16",
+    "barkod": "8690526012704",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "6623118",
+    "urun_adi": "ETİ CANGA BEYAZ DEKORSUZ 45G X 18",
+    "barkod": "8690526601010",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2263118",
+    "urun_adi": "ETİ CANGA COOKIE 45G X 24 KL",
+    "barkod": "8690526940649",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1762261",
+    "urun_adi": "ETİ CANGA ANTEP FISTIKLI 45G X 12 KL",
+    "barkod": "8690526671284",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1807800",
+    "urun_adi": "ETİ CANGA ÇİK YER FISTIKLI KAPLI GOFRET 50G X 18 KL",
+    "barkod": "8690526015781",
+    "deger": "22,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4754100",
+    "urun_adi": "ETİ KARAM GURME 50G X 18 KL",
+    "barkod": "8698526095417",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4839100",
+    "urun_adi": "ETİ KARAM GURME AF 36G X 18 KL",
+    "barkod": "8690526209951",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1889900",
+    "urun_adi": "ETİ AHENK SÜTLÜ ÇİKOLATALI GOFRET 30G X 20 KL",
+    "barkod": "8690526018935",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1880700",
+    "urun_adi": "ETİ BROWNİ INTENSE TV 50G X 16",
+    "barkod": "8690526076379",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1889200",
+    "urun_adi": "ETİ BROWNİ INTENSE GOLD 48G X 16",
+    "barkod": "8690526869920",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1400200",
+    "urun_adi": "ETİ BROWNİ INTENSE ROL 40G X 24 KL",
+    "barkod": "8690526784755",
+    "deger": "15,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1126500",
+    "urun_adi": "ETİ BROWNİ INTENSE FINDIKLI 48G X 16",
+    "barkod": "8690526687353",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1118600",
+    "urun_adi": "ETİ BROWNİ INTENSE ANTEP FISTIKLI 48G X 16",
+    "barkod": "8698526954321",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2885700",
+    "urun_adi": "ETİ ÇİKOLATALI GOFRET 34G X 36",
+    "barkod": "8690526016573",
+    "deger": "17,75",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1892200",
+    "urun_adi": "ETİ ÇİKOLATALI GOFRET BEYAZ 34G X 36",
+    "barkod": "8690526019222",
+    "deger": "15,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5154300",
+    "urun_adi": "ETİ ÇİKOLATALI GOFRET ANTEP FISTIKLI 33G X 36",
+    "barkod": "8690526315457",
+    "deger": "15,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7530400",
+    "urun_adi": "ETİ PETİTO GOFRET ÇİLEK 28G X 36",
+    "barkod": "8690526461069",
+    "deger": "15,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1674300",
+    "urun_adi": "ETİ MAXIMUS LOADING 38G X 24 KL",
+    "barkod": "8690526067438",
+    "deger": "22,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1037108",
+    "urun_adi": "ETİ MAXIMUS YER FISTIKLI 36G X 24 KL",
+    "barkod": "8690526887351",
+    "deger": "17,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3821808",
+    "urun_adi": "ETİ MAXIMUS BEYAZ YER FISTIKLI 36G X 24 KL",
+    "barkod": "8690526392257",
+    "deger": "17,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4543230",
+    "urun_adi": "ETİ MAXIMUS MONSTER 45G X 24 KL",
+    "barkod": "8690526245102",
+    "deger": "18,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1281200",
+    "urun_adi": "ETİ WANTED BUMBA 32G X 32 KL",
+    "barkod": "8690526028729",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1170800",
+    "urun_adi": "ETİ WANTED BUMBA BEYAZ 32G X 32 KL",
+    "barkod": "8690526017899",
+    "deger": "14,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "226124",
+    "urun_adi": "ETİ WANTED KARAMELLİ 32G X 32 KL",
+    "barkod": "8690526057231",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2372300",
+    "urun_adi": "ETİ WANTED MB GEYS 22G X 32 KL",
+    "barkod": "8690526018713",
+    "deger": "14,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1583800",
+    "urun_adi": "ETİ AŞK TADINDA 45G X 18",
+    "barkod": "8690526048383",
+    "deger": "50,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2258064",
+    "urun_adi": "ETİ MAXIMUS MUZLU 36G X 24 KL",
+    "barkod": "8690526891347",
+    "deger": "15,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1777200",
+    "urun_adi": "ETI CIK BOL A.FIS 30GX 12X12 K2",
+    "barkod": "8690526097725",
+    "deger": "55.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1781700",
+    "urun_adi": "ETI CIK BOL FIN. 30GX12X12 K",
+    "barkod": "8890526078175",
+    "deger": "37.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1882600",
+    "urun_adi": "KARAM A FIS 28GX12X12 KL",
+    "barkod": "8690626088266",
+    "deger": "55.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1316788",
+    "urun_adi": "ETI KARAMELA ÇIKO 30XGX24X6K2",
+    "barkod": "8690526411569",
+    "deger": "27.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "8710541",
+    "urun_adi": "EFSTKISLANT.FIS&G OF 50Gx12x12KL",
+    "barkod": "8690526182278",
+    "deger": "100.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1679890",
+    "urun_adi": "ETI CIKUZ A FIS 34GX TAXI KL",
+    "barkod": "8690526097985",
+    "deger": "43.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1679700",
+    "urun_adi": "ETICIK.UZ SBSZ 34GX16XEL",
+    "barkod": "8690526097978",
+    "deger": "35.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2885600",
+    "urun_adi": "ETI CIKOLATA BEYAZ AF 30GX16XH",
+    "barkod": "8690626026565",
+    "deger": "43.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1788100",
+    "urun_adi": "ETI ÇİKOLATA UZUN ANT FIS 176X240/12",
+    "barkod": "8890526028811",
+    "deger": "22.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2079700",
+    "urun_adi": "ETİ ÇİKOLATA UZUN SÜTLÜ 176X24X12",
+    "barkod": "8690526037974",
+    "deger": "17,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1987000",
+    "urun_adi": "PETITO MINI GEVREK BASK",
+    "barkod": "889062-6038704",
+    "deger": "17.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1880800",
+    "urun_adi": "PETITO MINI 72GX12",
+    "barkod": "8690526088082",
+    "deger": "93,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5312213",
+    "urun_adi": "PETITO 1430 SEKERI AZ 13GX24X12",
+    "barkod": "8690526922676",
+    "deger": "17.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "9242197",
+    "urun_adi": "ETI ÇİKOLATA BURÇAK 32GX16X9KL",
+    "barkod": "8690526612492",
+    "deger": "15.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2173400",
+    "urun_adi": "EÇ KARAMELLI FILALE 32GX16X9 KL",
+    "barkod": "8690526027340",
+    "deger": "15,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1258400",
+    "urun_adi": "KARAM %54 UZUN",
+    "barkod": "8890526025841",
+    "deger": "17.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1688600",
+    "urun_adi": "KARAM MINI",
+    "barkod": "8690525018867",
+    "deger": "42,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1780800",
+    "urun_adi": "BEYAZ LZUN IBGX1204",
+    "barkod": "8690526098081",
+    "deger": "40.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1018200",
+    "urun_adi": "PETITO GOFRET 260X24",
+    "barkod": "8690526061825",
+    "deger": "13,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1980900",
+    "urun_adi": "PETITO ÇUBUK 15GX12X12 KL",
+    "barkod": "8690526098098",
+    "deger": "17,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1778800",
+    "urun_adi": "PETITO AYICIK BGX48X6KL",
+    "barkod": "8890526047881",
+    "deger": "9,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1978900",
+    "urun_adi": "PETITO PATIM 18GX 15X12KL",
+    "barkod": "8690525097893",
+    "deger": "17,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1782200",
+    "urun_adi": "PETITO POPS 16GX15X12KL",
+    "barkod": "8690526078229",
+    "deger": "17,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2579300",
+    "urun_adi": "ETT CIK STICKS 280GATO",
+    "barkod": "8890626657996",
+    "deger": "8,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2583600",
+    "urun_adi": "ETI CIK STICK KARAMELLI",
+    "barkod": "8690526858360",
+    "deger": "8,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2579600",
+    "urun_adi": "KARAM STICK 1654",
+    "barkod": "8690626657967",
+    "deger": "8.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1782800",
+    "urun_adi": "ETICK BOLSUTLX HOGXTO AL",
+    "barkod": "8690626078281",
+    "deger": "78,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1782700",
+    "urun_adi": "ETICIK AULOGOFHETLI",
+    "barkod": "8690526078274",
+    "deger": "28,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1375300",
+    "urun_adi": "ETI CIKA FISK 60GX6X12 K2",
+    "barkod": "8690526067537",
+    "deger": "102,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5509212",
+    "urun_adi": "ETICIK SUT.K 60GX6X12 KL",
+    "barkod": "8890526716589",
+    "deger": "67,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1016300",
+    "urun_adi": "ETI CIKOLATA GOLD ANT FIS 60GXSX1ZKL",
+    "barkod": "8690626011639",
+    "deger": "102,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1275100",
+    "urun_adi": "ETI CIK FINK 60GXBX12 KL",
+    "barkod": "8690526047515",
+    "deger": "70,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1782081",
+    "urun_adi": "ETI GIROLATA BOL SUTLU 60GXE12",
+    "barkod": "8690526459400",
+    "deger": "67,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1277300",
+    "urun_adi": "KARAM %54 A. FIS 60GX6X12 KL",
+    "barkod": "8690526027739",
+    "deger": "102,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1277600",
+    "urun_adi": "KARAM %54 P.BAD. 60GX6X12 KL",
+    "barkod": "8690526047768",
+    "deger": "102,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4720232",
+    "urun_adi": "ETI ÇİKOLATA SUTLU 60GX10X12",
+    "barkod": "8690526712192",
+    "deger": "67,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1280400",
+    "urun_adi": "KARAM 5570 6OGXEX12",
+    "barkod": "8690526028040",
+    "deger": "67,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1275900",
+    "urun_adi": "KARAM 545 60XGX6X12",
+    "barkod": "8690526027593",
+    "deger": "67,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1280500",
+    "urun_adi": "KARAM 545 60XGX6X12",
+    "barkod": "8690626028067",
+    "deger": "67,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2618900",
+    "urun_adi": "ETI CIK HEDIYELIK FINDIKLI 300GX 12",
+    "barkod": "8690526394312",
+    "deger": "320,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "8061040",
+    "urun_adi": "ETİ CİKOLATA V KARAMELLI 200",
+    "barkod": "8690526571652",
+    "deger": "200,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7783028",
+    "urun_adi": "KARAM PUSH POP FORT KARAMELLOMI",
+    "barkod": "8698526624578",
+    "deger": "57,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3458578",
+    "urun_adi": "ETT ÇİKOLATA PUSH POP FINDIKLI 60EXVE",
+    "barkod": "8690526136882",
+    "deger": "57,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5408396",
+    "urun_adi": "ETI AMENK HEDIYELIK BOL SUTLU 300GXY2",
+    "barkod": "8690526216911",
+    "deger": "282,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1618800",
+    "urun_adi": "KARAM HEDIYELIK MAGNOLIA GOGX 12",
+    "barkod": "8690526061887",
+    "deger": "320,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2511000",
+    "urun_adi": "ETİ BURÇAK 131GX24",
+    "barkod": "8690526061108",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "8612200",
+    "urun_adi": "ETİ YULAFLI BURÇAK 125GX18",
+    "barkod": "8690526051222",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4811500",
+    "urun_adi": "ETİ SULTANİ BURÇAK 123GX18",
+    "barkod": "8690526071152",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1635000",
+    "urun_adi": "ETİ BURÇAK SÜTLÜ ÇİKOLATALI 114GX12",
+    "barkod": "8690526063506",
+    "deger": "38,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1238300",
+    "urun_adi": "ETİ BURÇAK BİTTER ÇİKOLATALI 114GX12",
+    "barkod": "8600526023830",
+    "deger": "38,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4933800",
+    "urun_adi": "ETİ BURÇAK SÜTLÜ KREMALI 100GX12",
+    "barkod": "6690526083360",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1232800",
+    "urun_adi": "ETİ BURÇAK SÜTLÜ KAKAO KREMALI 100GX12",
+    "barkod": "8690526023281",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1294400",
+    "urun_adi": "ETİ BURÇAK HİNDİSTAN CEVİZİ KREMALI 100GX12",
+    "barkod": "8690526029443",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1015300",
+    "urun_adi": "ETİ BURÇAK LİMONLU KREMALI 100GX12",
+    "barkod": "8690526001531",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2129600",
+    "urun_adi": "ETİ BURÇAK FINDIK EZMELİ PROTEİN 158GX18",
+    "barkod": "8690526205687",
+    "deger": "53,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2529800",
+    "urun_adi": "ETİ BURÇAK YER FISTIĞI EZMELİ PROTEİN 158GX18",
+    "barkod": "8690526316901",
+    "deger": "53,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2761717",
+    "urun_adi": "ETİ BURÇAK KURABİ TAHİNLİ 125GX12",
+    "barkod": "0690526581446",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2939402",
+    "urun_adi": "ETİ BURÇAK KURABİ KAKAOLU 125GX12",
+    "barkod": "8690526232959",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2510900",
+    "urun_adi": "ETİ BURÇAK KAKAOLU BİSKÜVİ 125GX12",
+    "barkod": "8650526061092",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1734600",
+    "urun_adi": "ETİ BURÇAK KURABİ FINDIKLI",
+    "barkod": "8690526073460",
+    "deger": "60,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2734700",
+    "urun_adi": "ETİ BURÇAK ŞEKERİ KAKAOLU",
+    "barkod": "8600526073477",
+    "deger": "60,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1834200",
+    "urun_adi": "ETİ TUTKU 40GX36",
+    "barkod": "8690526083421",
+    "deger": "8,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2243300",
+    "urun_adi": "ETİ TAD. PEY. 25GX36",
+    "barkod": "8690533014333",
+    "deger": "6,90",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "8985924",
+    "urun_adi": "ETİ BURÇAK TUZLU ZEYTİNLİ ÇÖREKOTLU",
+    "barkod": "8690526011714",
+    "deger": "24,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2026398",
+    "urun_adi": "ETİ BURÇAK TUZLU PEYNİRLİ",
+    "barkod": "8690526012957",
+    "deger": "24,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "9039201",
+    "urun_adi": "ETİ BURÇAK TUZLU ÇÖREKOTLU",
+    "barkod": "8690526385990",
+    "deger": "24,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2167300",
+    "urun_adi": "ETİ KEK MEYVELİ İKR 25GX32",
+    "barkod": "8690526816733",
+    "deger": "6,90",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2643800",
+    "urun_adi": "ETİ PİZZA KRAKER FİŞEK",
+    "barkod": "8690526014388",
+    "deger": "12,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2611200",
+    "urun_adi": "ETİ PİZZA FİŞEK PEYNİRLİ",
+    "barkod": "8690526011127",
+    "deger": "12,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4244502",
+    "urun_adi": "ETİ PİZZAVİC PEYNİRLİ KRAKER 61GX24",
+    "barkod": "8690526343482",
+    "deger": "12,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3532900",
+    "urun_adi": "BENIMO ÇİKOLATALI 80GX18",
+    "barkod": "8690526643298",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1632000",
+    "urun_adi": "BENIMO BITTER 84GX18KL",
+    "barkod": "8690526063201",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2414500",
+    "urun_adi": "KOMBO LOKMALIK 96GX18KL",
+    "barkod": "8690526786568",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "8773914",
+    "urun_adi": "KOMBO KREMALI LOKMALIK 96GX18KL",
+    "barkod": "8690526596372",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2233500",
+    "urun_adi": "TUTKU 100GX24 KL",
+    "barkod": "8690526643014",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2110700",
+    "urun_adi": "TUTKU BOLD 138GX12",
+    "barkod": "8690626011073",
+    "deger": "36,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "9833500",
+    "urun_adi": "TUTKU 150GX24 KL",
+    "barkod": "8690526083254",
+    "deger": "36,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2533900",
+    "urun_adi": "KOMBO STICK V2 56GX18 M",
+    "barkod": "8690526043425",
+    "deger": "24,10",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "8514541",
+    "urun_adi": "BENIMO KOMBO 56GX18",
+    "barkod": "8690526053304",
+    "deger": "28,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "9430100",
+    "urun_adi": "KREMALI 61GX24 KL",
+    "barkod": "8660526962115",
+    "deger": "13,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2433100",
+    "urun_adi": "KREMALI ÇİLEKLİ 61GX24 KL",
+    "barkod": "8698526023311",
+    "deger": "13,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2438100",
+    "urun_adi": "KREMALI MUZLU 61GX24 KL",
+    "barkod": "8690526043814",
+    "deger": "13,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2622000",
+    "urun_adi": "KREMALI FINDIKLI 61GX24 KL",
+    "barkod": "8690526032207",
+    "deger": "13,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4431800",
+    "urun_adi": "NERO KAKAOLU KREMALI 110GX16 KL",
+    "barkod": "8690526793184",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3031700",
+    "urun_adi": "CIN LOKMALIK BSZ 114GX18 KL",
+    "barkod": "8690533003177",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "8421909",
+    "urun_adi": "CIN LOKMALIK ÇİLEKLİ 114GX18KL",
+    "barkod": "8690526588979",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "8757426",
+    "urun_adi": "B2S CIN ELMALI LOKMALIK 114GX18M",
+    "barkod": "8690526758145",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3183503",
+    "urun_adi": "CIN PORTAKALLI 325GX10",
+    "barkod": "8690526063140",
+    "deger": "60,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "173-4942",
+    "urun_adi": "CIN ÇİLEKLİ 325GX10KL",
+    "barkod": "8690526043227",
+    "deger": "60,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2813100",
+    "urun_adi": "BUMBO 42GX24 KL",
+    "barkod": "8690526051314",
+    "deger": "15,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3431400",
+    "urun_adi": "CIN PORTAKALLI 25GX36",
+    "barkod": "86900478",
+    "deger": "6,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2832200",
+    "urun_adi": "CIN ÇİLEKLİ 25GX36",
+    "barkod": "86920292",
+    "deger": "6,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "6580308",
+    "urun_adi": "TUTKU TART 45GX12KL",
+    "barkod": "8690526164267",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "8896731",
+    "urun_adi": "TUTKU TART 45GX16 KL",
+    "barkod": "8690526164267",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3931100",
+    "urun_adi": "PUF KAKAOLU 18GX48",
+    "barkod": "86920124",
+    "deger": "6,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3931200",
+    "urun_adi": "PUF MEYVELİ 18GX48",
+    "barkod": "86920117",
+    "deger": "6,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3731300",
+    "urun_adi": "PUF HİNDİSTAN CEVİZLİ 16GX48 DP",
+    "barkod": "86920131",
+    "deger": "6,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1734400",
+    "urun_adi": "PUF RENKLİ GRANÜL DOLGULU 20GX48",
+    "barkod": "8690526073446",
+    "deger": "6,90",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "6317830",
+    "urun_adi": "PUF GOLD 20GX48 TR",
+    "barkod": "8690526615684",
+    "deger": "6,90",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3511001",
+    "urun_adi": "ETİ BURÇAK 3LO 393GX 14KL",
+    "barkod": "8690526661100",
+    "deger": "73.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2812200",
+    "urun_adi": "ETİ YULAFLI BUR 3LU 375GX12 KL",
+    "barkod": "8690526651224",
+    "deger": "73.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3411500",
+    "urun_adi": "ETİ SULTANİ BUR 300 369GX14 KL",
+    "barkod": "8690526671154",
+    "deger": "73.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2629500",
+    "urun_adi": "ETİ BURÇAK TUZLU ÇÖREKOTLU 273",
+    "barkod": "8690526032955",
+    "deger": "70.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2617100",
+    "urun_adi": "ETİ BURÇAK TUZLU ZEYTİNLİ 273GX16",
+    "barkod": "8690526031712",
+    "deger": "70,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5833800",
+    "urun_adi": "ETİ BUR KREMALI 3'LÜ 300GX9 KL",
+    "barkod": "6690526733364",
+    "deger": "74.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1539400",
+    "urun_adi": "ETİ BURÇAK KR YULAFLI 3'LÜ",
+    "barkod": "8690526653945",
+    "deger": "74.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4692481",
+    "urun_adi": "ETİ NERO 300GX 12",
+    "barkod": "8690526778433",
+    "deger": "67.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7026416",
+    "urun_adi": "ETİ BENIMO LOK 3'LÜ 240GX9 KL",
+    "barkod": "8690526743295",
+    "deger": "87,25",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5431700",
+    "urun_adi": "ETİ CIN LOK 3'LÜ 342X18KL",
+    "barkod": "8690533013176",
+    "deger": "75.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1428790",
+    "urun_adi": "ETİ PUF RENKLİ 216GX6 KL",
+    "barkod": "8690526519678",
+    "deger": "72.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5479680",
+    "urun_adi": "ETİ PUF KAKAOLU 216GX6 KL",
+    "barkod": "8690526308340",
+    "deger": "72.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2933500",
+    "urun_adi": "ETİ TUTKU TORBA 210GX 18 KL",
+    "barkod": "8690533093352",
+    "deger": "52.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "6103820",
+    "urun_adi": "ETİ BURÇAK KURABİ TORBA KAKAOLU 150GX12",
+    "barkod": "8690526487403",
+    "deger": "42.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2719824",
+    "urun_adi": "ETİ BURÇAK KURABİ TORBA BADEMLİ 180GX12 L",
+    "barkod": "8690526689890",
+    "deger": "42.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "6844767",
+    "urun_adi": "ETİ ÇAY KEYFİ TORBA DOLGULU LİMONLU 140GX12KL",
+    "barkod": "8690526863528",
+    "deger": "24.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7908387",
+    "urun_adi": "ETİ ÇAY KEYFİ TORBA KEK KAKAOLU 140GX12KL",
+    "barkod": "8690526948836",
+    "deger": "24,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2410100",
+    "urun_adi": "ETİ PETİT BEURRE 1000GX5 KL",
+    "barkod": "8690526041018",
+    "deger": "145.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4310100",
+    "urun_adi": "ETİ PETİT BEURRE 820GX6 KL",
+    "barkod": "8690526081014",
+    "deger": "119,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3710200",
+    "urun_adi": "ETİ FİNGER 900GX5 KL",
+    "barkod": "8690533771021",
+    "deger": "147,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1310100",
+    "urun_adi": "ETİ PETİT BEURRE 400GX 10 KL",
+    "barkod": "8690526031019",
+    "deger": "62.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1611400",
+    "urun_adi": "ETİ ETİBÖR 400GX10 KL",
+    "barkod": "8690526061146",
+    "deger": "62.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1811900",
+    "urun_adi": "ETİ PB KAKAOLU 370GX 10 KL",
+    "barkod": "8690526081199",
+    "deger": "62.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2910100",
+    "urun_adi": "ETİ PETİT BEURRE 200GX16 KL",
+    "barkod": "8690526091013",
+    "deger": "32.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2541422",
+    "urun_adi": "ETİ PETİT BEURRE KAKAOLU KREMALI 270GX15KL",
+    "barkod": "8690526740744",
+    "deger": "70.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3710100",
+    "urun_adi": "ETİ PETİT BEURRE MİNİ 175GX 12 KL",
+    "barkod": "8690526051017",
+    "deger": "32.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5311300",
+    "urun_adi": "CICIBEBE 1000GX1",
+    "barkod": "8690526031132",
+    "deger": "206,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5511300",
+    "urun_adi": "CICIBEBE 700GX1",
+    "barkod": "8690526001135",
+    "deger": "149,75",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3511300",
+    "urun_adi": "CICIBEBE 800GX4",
+    "barkod": "8690526061130",
+    "deger": "173,75",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1870700",
+    "urun_adi": "CICIBEBE VITAMINLI EKMEK 125GX15KL",
+    "barkod": "8690526097077",
+    "deger": "47.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7154321",
+    "urun_adi": "CICIBEBE ŞEKERSİZ EKMEK",
+    "barkod": "8600526330310",
+    "deger": "64.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2711300",
+    "urun_adi": "CICIBEBE 172GX12",
+    "barkod": "8690533091136",
+    "deger": "47.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7621586",
+    "urun_adi": "CICIBEBE 212GX12",
+    "barkod": "8690533021133",
+    "deger": "47.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1811300",
+    "urun_adi": "CICIBEBE EKO. 400GX8 KL",
+    "barkod": "8690533081137",
+    "deger": "87.25",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1870100",
+    "urun_adi": "ETIMEK KLASIK 143GX12 ML",
+    "barkod": "8690526057019",
+    "deger": "50.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2370200",
+    "urun_adi": "ETIMEK TUZSUZ 148GX12 KL",
+    "barkod": "8690526037028",
+    "deger": "50.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2695000",
+    "urun_adi": "LIFALIF YULAF 500GX 12 KL",
+    "barkod": "6690526069500",
+    "deger": "87,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3095000",
+    "urun_adi": "LIFALIF YULAF EZMESİ 350X12 KL",
+    "barkod": "8690526039503",
+    "deger": "87,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1847000",
+    "urun_adi": "LIFALIF INCE MÜSLI MEYVEL 350GX",
+    "barkod": "8690526094700",
+    "deger": "116.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "9761889",
+    "urun_adi": "LIFALIF 4 TAHILLI KAKAD 250GX12 KL",
+    "barkod": "8690526440897",
+    "deger": "147.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1497362",
+    "urun_adi": "GRANDLA 2000X12",
+    "barkod": "8660526594415",
+    "deger": "144,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2430200",
+    "urun_adi": "LIFALIF BRANOLA KURUYEMİŞLİ 200X12",
+    "barkod": "8690526023021",
+    "deger": "162.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1846000",
+    "urun_adi": "LIFALIF GRANOLA VISHE KAD PIN 2000X12",
+    "barkod": "6690526024608",
+    "deger": "162,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1045700",
+    "urun_adi": "LIFALIF YULAF TOP KUR INGR FIN 38",
+    "barkod": "8890526014579",
+    "deger": "36.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1032100",
+    "urun_adi": "TOP KIRIMEYVELI 330X18",
+    "barkod": "8690526013213",
+    "deger": "36.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1045800",
+    "urun_adi": "UFALIF PULAF TOPLAY CEKIR DCIMT 360R18",
+    "barkod": "8600526014586",
+    "deger": "36.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2596432",
+    "urun_adi": "LIFALIF GRANOLA VISNE KAD FIN AYTEK",
+    "barkod": "8690526785875",
+    "deger": "162.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3028124",
+    "urun_adi": "LIFALIF ELM HURMA",
+    "barkod": "8690526539201",
+    "deger": "28.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "9374977",
+    "urun_adi": "LIFALIF GRA KURUYEMIS",
+    "barkod": "8690526930343",
+    "deger": "28.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "6892136",
+    "urun_adi": "LIFALIF GRANOLA ELMALI 40GX16 KL",
+    "barkod": "8690526290072",
+    "deger": "28,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2070300",
+    "urun_adi": "FORM KIZARMIŞ KEPEKLİ EKMEK",
+    "barkod": "8690526017037",
+    "deger": "62.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2628700",
+    "urun_adi": "LIFALIF & TAHIL EZMES",
+    "barkod": "8690526012872",
+    "deger": "120,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1045400",
+    "urun_adi": "PALF VERFIS HURMALI",
+    "barkod": "8690526014548",
+    "deger": "115,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1999400",
+    "urun_adi": "LIPALIF INCE CESINILI MÜSLI",
+    "barkod": "8690526019949",
+    "deger": "147,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1357563",
+    "urun_adi": "LIFALIF",
+    "barkod": "8690526895512",
+    "deger": "33.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2266623",
+    "urun_adi": "LIFALIF",
+    "barkod": "8698526877860",
+    "deger": "33.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3756513",
+    "urun_adi": "LIFALIF",
+    "barkod": "8600626107756",
+    "deger": "33.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "9645050",
+    "urun_adi": "LIFALIF BITTER ÇİKOLATA",
+    "barkod": "8690526748344",
+    "deger": "33.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4220044",
+    "urun_adi": "LIFALIF",
+    "barkod": "8690526681782",
+    "deger": "45.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5481181",
+    "urun_adi": "LIFALIF",
+    "barkod": "8690526397634",
+    "deger": "32.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "970000",
+    "urun_adi": "LIFALIF DOLGULU",
+    "barkod": "8690526357744",
+    "deger": "33.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7975060",
+    "urun_adi": "LIFALIF",
+    "barkod": "8690526946719",
+    "deger": "30.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3027901",
+    "urun_adi": "LIFALIF",
+    "barkod": "8690526822624",
+    "deger": "37.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "9750669",
+    "urun_adi": "LIFALIF",
+    "barkod": "8690526847948",
+    "deger": "37.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4285404",
+    "urun_adi": "LIFALIF",
+    "barkod": "8690526472164",
+    "deger": "95.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2658300",
+    "urun_adi": "LIFALIF",
+    "barkod": "8690526025834",
+    "deger": "25.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2694900",
+    "urun_adi": "LIFALIF",
+    "barkod": "8690526029498",
+    "deger": "95.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7802371",
+    "urun_adi": "LIFALIF BITTER",
+    "barkod": "8690526203653",
+    "deger": "95.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3274746",
+    "urun_adi": "PRONOT ÇİKOLATA",
+    "barkod": "8698526958587",
+    "deger": "45.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4940900",
+    "urun_adi": "FORM KLASİK",
+    "barkod": "8690526094098",
+    "deger": "13.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1235200",
+    "urun_adi": "FORM TAM ÇAVDARLI",
+    "barkod": "8690526023526",
+    "deger": "14.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1619000",
+    "urun_adi": "FORM KEPEKLİ OTLU",
+    "barkod": "8690526011985",
+    "deger": "14.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2419200",
+    "urun_adi": "FORM DOMATES ZEYTİN",
+    "barkod": "8690526011929",
+    "deger": "14.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7273124",
+    "urun_adi": "FORM KAKAOLU",
+    "barkod": "8690526538600",
+    "deger": "15.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1812300",
+    "urun_adi": "FORM PATLA",
+    "barkod": "8690526026249",
+    "deger": "18.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1942000",
+    "urun_adi": "FORM",
+    "barkod": "8690526894205",
+    "deger": "20.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3935400",
+    "urun_adi": "FORM BITTER KAPLI",
+    "barkod": "8690526093543",
+    "deger": "37.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1647400",
+    "urun_adi": "FORM",
+    "barkod": "8690536064741",
+    "deger": "24.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1945100",
+    "urun_adi": "FORM",
+    "barkod": "8690533094519",
+    "deger": "14.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "656921",
+    "urun_adi": "PRONOT NAK KER",
+    "barkod": "8690526151120",
+    "deger": "90.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2446701",
+    "urun_adi": "PRONOT OBERE",
+    "barkod": "8690526548074",
+    "deger": "134.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "8565227",
+    "urun_adi": "PRONOT KURABİYE",
+    "barkod": "8690526662965",
+    "deger": "70.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7835166",
+    "urun_adi": "PRONOT",
+    "barkod": "8690526238012",
+    "deger": "90.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7397210",
+    "urun_adi": "PRONOT CEVİZLİ",
+    "barkod": "8690526692302",
+    "deger": "65.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5418687",
+    "urun_adi": "PRONOT ZEYTİNLİ",
+    "barkod": "8690526104881",
+    "deger": "65.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2515352",
+    "urun_adi": "PRONOT PORTAKALLI",
+    "barkod": "8690526404424",
+    "deger": "65.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3473013",
+    "urun_adi": "PRONOT",
+    "barkod": "8690520278780",
+    "deger": "105.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3094380",
+    "urun_adi": "PRONOT",
+    "barkod": "8690526994352",
+    "deger": "66.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3510515",
+    "urun_adi": "PRONOT",
+    "barkod": "8690526950587",
+    "deger": "60.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3552200",
+    "urun_adi": "HOŞBEŞ FINDIKLI 142GX20",
+    "barkod": "8690526095226",
+    "deger": "55.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3352600",
+    "urun_adi": "HOŞBEŞ ÇİLEKLİ 142GX20",
+    "barkod": "8690526095264",
+    "deger": "55.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2752000",
+    "urun_adi": "HOŞBEŞ KAKAOLU 142GX20",
+    "barkod": "8690526095202",
+    "deger": "55.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2655300",
+    "urun_adi": "HOŞBEŞ HİNDİSTAN CEVİZLİ 142GX20",
+    "barkod": "8690526065533",
+    "deger": "55.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1452300",
+    "urun_adi": "HOŞBEŞ MUZLU 142GX20",
+    "barkod": "8690526045238",
+    "deger": "55.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1654400",
+    "urun_adi": "BİDOLU YER FISTIKLI 16X12",
+    "barkod": "8690526035444",
+    "deger": "35.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1655100",
+    "urun_adi": "BİDOLU YER FISTIKLI KAKAOLU 16X12",
+    "barkod": "8690526035512",
+    "deger": "35.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7861471",
+    "urun_adi": "BİDOLU MUZLU YER FISTIKLI 16X12",
+    "barkod": "8690526586014",
+    "deger": "35.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1855100",
+    "urun_adi": "BİDOLU YER FISTIKLI KAKAOLU 36GX24",
+    "barkod": "8690526075518",
+    "deger": "18,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1854400",
+    "urun_adi": "BİDOLU YER FISTIKLI 36GX24",
+    "barkod": "8690526075440",
+    "deger": "18,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1058200",
+    "urun_adi": "BİDOLU YER FISTIKLI GOFRET BAR 29GX24",
+    "barkod": "8690526015828",
+    "deger": "14.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1752200",
+    "urun_adi": "HOŞBEŞ FINDIKLI 40GX24",
+    "barkod": "8690526005225",
+    "deger": "17,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1752600",
+    "urun_adi": "HOŞBEŞ ÇİLEKLİ 40GX24",
+    "barkod": "8690526075266",
+    "deger": "17,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1852000",
+    "urun_adi": "HOŞBEŞ KAKAOLU 40GX24",
+    "barkod": "8690526085203",
+    "deger": "17.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2155300",
+    "urun_adi": "HOŞBEŞ HİNDİSTAN CEVİZLİ 40GX24",
+    "barkod": "8690526055534",
+    "deger": "17,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3452200",
+    "urun_adi": "HOŞBEŞ FINDIKLI 70GX12",
+    "barkod": "8890526745220",
+    "deger": "31,75",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3452000",
+    "urun_adi": "HOŞBEŞ KAKAOLU 70GX12",
+    "barkod": "8690526035208",
+    "deger": "31,75",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3455300",
+    "urun_adi": "HOŞBEŞ HİNDİSTAN CEVİZLİ 70GX12",
+    "barkod": "8690526045535",
+    "deger": "31,75",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1652500",
+    "urun_adi": "HOŞBEŞ LİMONLU 66GX12",
+    "barkod": "8690526045252",
+    "deger": "31.75",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1654500",
+    "urun_adi": "HOŞBEŞ VİŞNELİ 66GX12",
+    "barkod": "8600526075457",
+    "deger": "31,75",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1268900",
+    "urun_adi": "SÜT BURGER 35GX16TV",
+    "barkod": "86924962",
+    "deger": "18,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "8310567",
+    "urun_adi": "SÜT BURGER MUZLU 35GX16TV",
+    "barkod": "8690526522647",
+    "deger": "18.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1270600",
+    "urun_adi": "SÜT BURGER KAKAOLU 35GX16 TV",
+    "barkod": "8690526067063",
+    "deger": "18.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1268400",
+    "urun_adi": "SÜT BURGER ÇİLEK 36GX16TV",
+    "barkod": "8690526076843",
+    "deger": "18.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1204911",
+    "urun_adi": "PETITO SOSBOM SÜTLÜ KREMALI 50GX12K",
+    "barkod": "8690526518596",
+    "deger": "28.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "6205397",
+    "urun_adi": "PETITO SOSBOM ÇİKOLATALI 50GX12KL",
+    "barkod": "8690526780214",
+    "deger": "28.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4493463",
+    "urun_adi": "PASTAMIA BALLI CEVİZLİ PASTA 275G",
+    "barkod": "8690526266756",
+    "deger": "40.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1297300",
+    "urun_adi": "ETI MOUSSE 80G",
+    "barkod": "8690526029733",
+    "deger": "26,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1865000",
+    "urun_adi": "BROWNI MOUSSE 80G",
+    "barkod": "8690526096506",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1818420",
+    "urun_adi": "BROWNI PASTA 165GX4KL",
+    "barkod": "8690526303017",
+    "deger": "94.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1996000",
+    "urun_adi": "ALASKA FRIGO SÜTLÜ 60GX12DP",
+    "barkod": "8690526099606",
+    "deger": "47,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1996400",
+    "urun_adi": "ALASKA FRIGO MOZAİK BAR 50GX18",
+    "barkod": "8690526099644",
+    "deger": "47.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1697200",
+    "urun_adi": "ALASKA FRIGO KARAMELLİ 60GX18 DP",
+    "barkod": "8690526069722",
+    "deger": "47,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1996100",
+    "urun_adi": "ALASKA FRIGO BITTER 60GX18 DP",
+    "barkod": "8690526099613",
+    "deger": "47.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1223900",
+    "urun_adi": "ALASKA FRIGO KAKAOLU BİSKÜVİLİ SÜTLÜ",
+    "barkod": "8690526012391",
+    "deger": "47,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1896800",
+    "urun_adi": "ALASKA FRIGO ANTEP FISTIKLI SÜTLÜ KAKAOLU",
+    "barkod": "8690526079684",
+    "deger": "65.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1922900",
+    "urun_adi": "ALASKA FRIGO YER FISTIKLI 47GX18",
+    "barkod": "8690526012292",
+    "deger": "56.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5837100",
+    "urun_adi": "POPKEK KAK. 60GX24 KL",
+    "barkod": "8690526083711",
+    "deger": "15.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4837200",
+    "urun_adi": "POPKEK MUZ 60GX24 KL",
+    "barkod": "8690526083728",
+    "deger": "15.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5837000",
+    "urun_adi": "POPKEK LIM. 60GX24 KL",
+    "barkod": "8690526083704",
+    "deger": "15.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1738700",
+    "urun_adi": "POPKEK VISNE 60GX24 KL",
+    "barkod": "8690526073873",
+    "deger": "15,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3937700",
+    "urun_adi": "POPKEK PORTAKAL 60GX24 KL",
+    "barkod": "8600526073774",
+    "deger": "15.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1699000",
+    "urun_adi": "POPKEK BITTER CIKOLATALI 55GX24 KL",
+    "barkod": "6690526069906",
+    "deger": "15.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1662300",
+    "urun_adi": "POPKEK HINDISTAN CEVIZLI 60GX24 KL",
+    "barkod": "8690526066233",
+    "deger": "15.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "6032466",
+    "urun_adi": "POPKEK CANGA 51GX24 KL",
+    "barkod": "8690526420257",
+    "deger": "15.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4637300",
+    "urun_adi": "BROWNI GOLD KAKAOLU 45GX24 KL",
+    "barkod": "6690526053738",
+    "deger": "15.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1637400",
+    "urun_adi": "BROWNI GOLD VISNELI 45GX24 KL",
+    "barkod": "8690526063744",
+    "deger": "15.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1361300",
+    "urun_adi": "TOPKEK KAKAOLU BSZ 35GX24 TV",
+    "barkod": "8690526056135",
+    "deger": "12.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1361200",
+    "urun_adi": "TOPKEK MEYVELI BSZ 40GX24 TV",
+    "barkod": "8600526066128",
+    "deger": "12.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4861100",
+    "urun_adi": "TOPKEK CILEKLI BSZ 40GX24 TV",
+    "barkod": "8690526086118",
+    "deger": "12,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4860900",
+    "urun_adi": "TOPKEK PORTAKALLI BSZ 40GX24 TV",
+    "barkod": "8600526086095",
+    "deger": "12,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1920700",
+    "urun_adi": "TOPKEK HINDISTAN CEVIZLI 40GX24 (MK)",
+    "barkod": "8690526092072",
+    "deger": "12.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3964600",
+    "urun_adi": "POP MINI KAK 180GX10 KL",
+    "barkod": "8690526096469",
+    "deger": "54,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3964700",
+    "urun_adi": "POP MINI MUZ 180GX10 KL",
+    "barkod": "8690526096476",
+    "deger": "54,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1754200",
+    "urun_adi": "POP MINI LIMON 180GX10 KL",
+    "barkod": "8690526076423",
+    "deger": "54,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1662500",
+    "urun_adi": "POPK MINI H. CEVIZLI 180GX10 KL",
+    "barkod": "8690526066257",
+    "deger": "54,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2635100",
+    "urun_adi": "POPKEK MINI BITTER CIROLATALI 182GX10 KL",
+    "barkod": "8690526063515",
+    "deger": "54,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "9237629",
+    "urun_adi": "PAYKEK MINI LIMONLU HASHASLI 180GX12",
+    "barkod": "8690526444854",
+    "deger": "49,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5757795",
+    "urun_adi": "PAYKEK MINI KAKAOLU PORTAKAL 150GX12",
+    "barkod": "8690526854434",
+    "deger": "49,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5782245",
+    "urun_adi": "PAYKEK MINI SEFTALI YOGURT 150GX12 KL",
+    "barkod": "8690526914879",
+    "deger": "49,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3397457",
+    "urun_adi": "PAYKEK MINI KAKAO MUZ-SUT 150GRX12 KL",
+    "barkod": "8690526101330",
+    "deger": "49,50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1765200",
+    "urun_adi": "B.INTENS.KAK MINI 180GK12 KZ",
+    "barkod": "8690526076522",
+    "deger": "85.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1868300",
+    "urun_adi": "BINT.KARAMEL MINI 160GK12",
+    "barkod": "8690526086835",
+    "deger": "85.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1660000",
+    "urun_adi": "BINTENS KAHVELI MINI 160GX12",
+    "barkod": "8690526066004",
+    "deger": "85.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1760600",
+    "urun_adi": "BROWN INTENSE GOLD",
+    "barkod": "8690526076065",
+    "deger": "85.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5534204",
+    "urun_adi": "FINDIK MIN G",
+    "barkod": "8690526366654",
+    "deger": "85.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3207075",
+    "urun_adi": "BROWNI KL 200GX14",
+    "barkod": "8690526351018",
+    "deger": "85,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1737300",
+    "urun_adi": "BG KAK MINI 180GX12",
+    "barkod": "8690526073736",
+    "deger": "63,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7390241",
+    "urun_adi": "TARTINI FRAMEBUAZLI 114GX14 KL",
+    "barkod": "8690526288758",
+    "deger": "39,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4163000",
+    "urun_adi": "PAYKEK KAK 200GX6 KL",
+    "barkod": "8690533066301",
+    "deger": "53,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4163500",
+    "urun_adi": "PAYKEK MOZ 200GX6 KL",
+    "barkod": "8690533056357",
+    "deger": "53,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4163300",
+    "urun_adi": "PAYKEK MEY 200GX6 KL",
+    "barkod": "8690533066332",
+    "deger": "53,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4168000",
+    "urun_adi": "PAYKEK ŞEK ŞAH CIKOL FIN 285G",
+    "barkod": "8690526096803",
+    "deger": "105.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2140100",
+    "urun_adi": "CRAX SADE CUBUK KRAKER 40GX34",
+    "barkod": "8690533034010",
+    "deger": "6,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2940100",
+    "urun_adi": "CRAX SADE CUBUK KRAKER 86GX12",
+    "barkod": "8690533074016",
+    "deger": "11.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1905577",
+    "urun_adi": "CRAX THINS BAHARATLI 70GX12",
+    "barkod": "8690526657060",
+    "deger": "16,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4826251",
+    "urun_adi": "CRAX THINS PEYNIRLI 70GX12",
+    "barkod": "8690526241793",
+    "deger": "16.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "6713270",
+    "urun_adi": "BURÇAK TAHIL CIPSI FESLEGEN 40GX24 KL",
+    "barkod": "8690526292694",
+    "deger": "17:50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2340600",
+    "urun_adi": "SUSAMLI ÇUBUK 120GX10 KL",
+    "barkod": "8690533734064",
+    "deger": "27.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3940600",
+    "urun_adi": "SUSAMLI ÇUBUK 56GX17 KL",
+    "barkod": "8690533634067",
+    "deger": "13.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5474090",
+    "urun_adi": "CRAX THINS MEXICAN CHILI 70GX12",
+    "barkod": "8690526297743",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "6082051",
+    "urun_adi": "CRAX THINS KREMA & SOGAN 70GX12",
+    "barkod": "8690526364605",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2748701",
+    "urun_adi": "CRAX ACI BAHARATLI 50GX20 KL",
+    "barkod": "8690526044873",
+    "deger": "20.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2748600",
+    "urun_adi": "CRAX PEYNIR & SOĞAN 50GX20",
+    "barkod": "8690533014869",
+    "deger": "20.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2744900",
+    "urun_adi": "CRAX CHILLI LIME 50GX20",
+    "barkod": "8690526064499",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3306592",
+    "urun_adi": "CRAX PESTO AROMALI 50GX20 KL",
+    "barkod": "8690526777795",
+    "deger": "12.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5632405",
+    "urun_adi": "CRAX MEXICAN CHILI 50GX20 KL",
+    "barkod": "8690526294388",
+    "deger": "12.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5742300",
+    "urun_adi": "CRAX BAHARATLI 50GX20",
+    "barkod": "8690526074238",
+    "deger": "14,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2041400",
+    "urun_adi": "CRAX PEYNİRLİ 50GX20 TV",
+    "barkod": "8690526004143",
+    "deger": "14,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4540800",
+    "urun_adi": "CRAX ACILI 50GX20",
+    "barkod": "8690526054087",
+    "deger": "14.00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2243600",
+    "urun_adi": "CRAX MISIRLI 50GX20",
+    "barkod": "8690526024363",
+    "deger": "14,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "9624606",
+    "urun_adi": "CRAX PAT. LEZ. S3 KET & JAL 50X20KL",
+    "barkod": "8690526234687",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5216114",
+    "urun_adi": "CRAX PATLEZ. S2 SRIRACHA 50X20KL",
+    "barkod": "8690526523491",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1864526",
+    "urun_adi": "CRAX PAT. LEZ. S1 ACILI SOS 50X20KL",
+    "barkod": "8690528361062",
+    "deger": "20,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4942300",
+    "urun_adi": "CRAX BAHARATLI 175GX10 TV",
+    "barkod": "8690533004235",
+    "deger": "37,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5141400",
+    "urun_adi": "CRAX PEYNİRLİ 175GX10 TV",
+    "barkod": "8690533724140",
+    "deger": "37,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5942300",
+    "urun_adi": "CRAX BAHARATLI 60GX17 TV",
+    "barkod": "8690533014234",
+    "deger": "19,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5041400",
+    "urun_adi": "CRAX PEYNİRLİ 60GX17 TV",
+    "barkod": "8690533714141",
+    "deger": "19,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2246700",
+    "urun_adi": "GONG 40GX18 DP",
+    "barkod": "8690526024677",
+    "deger": "16.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2248200",
+    "urun_adi": "GONG BALLI HARDALLI 34GX18 KL",
+    "barkod": "8690526004822",
+    "deger": "16.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2244700",
+    "urun_adi": "GONG BAHARATLI PEYNİRLİ 34GX18 KL",
+    "barkod": "8690526004471",
+    "deger": "16.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "8926026",
+    "urun_adi": "GONG SÜT MISIR & ACIL 34GX18 KL",
+    "barkod": "8690526541495",
+    "deger": "16.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "6067920",
+    "urun_adi": "GONG FALAFEL 34GX18 KL",
+    "barkod": "8690526928685",
+    "deger": "16.50",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "5846700",
+    "urun_adi": "GONG 64GX16 KL",
+    "barkod": "8690526084671",
+    "deger": "24,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3748200",
+    "urun_adi": "GONG BALLI HARDALLI 68GX16 KL",
+    "barkod": "8690526074825",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3744700",
+    "urun_adi": "GONG BAHARATLI PEYNIRLI 68GX16 KL",
+    "barkod": "8690526074474",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "8997925",
+    "urun_adi": "GONG SÜT MISIR & ACILI 68GX16 KL",
+    "barkod": "8690526194455",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "4006591",
+    "urun_adi": "GONG FALAFEL 68GX16 KL",
+    "barkod": "8690526928685",
+    "deger": "30,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3540300",
+    "urun_adi": "BALIK 55GX14 TV",
+    "barkod": "8690526004038",
+    "deger": "21,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2540300",
+    "urun_adi": "BALIK 40GX16 TV",
+    "barkod": "8690533024035",
+    "deger": "11,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1048900",
+    "urun_adi": "BALIK MINI MISIRLI 40GX18",
+    "barkod": "8690526004891",
+    "deger": "22,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1248900",
+    "urun_adi": "BALIK MINI MISIRLI 40GX18",
+    "barkod": "8698526024899",
+    "deger": "14,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7486013",
+    "urun_adi": "GONG CRAX PATLAR SANAL",
+    "barkod": "8660626588452",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "3540400",
+    "urun_adi": "PIZZA 76GX14 TV",
+    "barkod": "8690526094045",
+    "deger": "15,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2540400",
+    "urun_adi": "PIZZA 38GX21 TV",
+    "barkod": "8690533024042",
+    "deger": "8,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2103287",
+    "urun_adi": "ÇITIR BALIK 70G X 14KL",
+    "barkod": "8690526358543",
+    "deger": "22,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1196961",
+    "urun_adi": "ÇITIR BALIK 35G X 16KL",
+    "barkod": "8690526115740",
+    "deger": "14,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7815429",
+    "urun_adi": "GONG SÜTLÜ KAKAO KAPLAMALI 30GX24",
+    "barkod": "8690526344182",
+    "deger": "25,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1250000",
+    "urun_adi": "GONG POPS SADE 80GX10 KL",
+    "barkod": "8690526065007",
+    "deger": "46,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "2194800",
+    "urun_adi": "GONG POPS PEYNIR ACILI 80GX10 KL",
+    "barkod": "8690526069487",
+    "deger": "46,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "1247800",
+    "urun_adi": "GONG POPS BAHARATLI CESNILI 80GX10 KL",
+    "barkod": "8690526064789",
+    "deger": "46,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7130504",
+    "urun_adi": "GONG POPS BAL HARDAL 80GX10 KL",
+    "barkod": "8690526482354",
+    "deger": "46,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7365564",
+    "urun_adi": "KIRMIZ BALIK 40GX18 KL",
+    "barkod": "8690526847344",
+    "deger": "12,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "6496713",
+    "urun_adi": "GONG POPS SADE 50GX18KL",
+    "barkod": "8690526574189",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "8990613",
+    "urun_adi": "GONG POPS PEYNİR ACI 50GX18",
+    "barkod": "8690526669021",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "urun_kodu": "7093345",
+    "urun_adi": "GONG POPS BAHARATLI 50GX18 KL",
+    "barkod": "8690526800448",
+    "deger": "35,00",
+    "category": "urun"
+  },
+  {
+    "barkod": "0",
+    "urun_adi": "Ekmek",
+    "urun_kodu": "ekmek",
+    "deger": "15",
+    "category": "diger"
   }
 ]

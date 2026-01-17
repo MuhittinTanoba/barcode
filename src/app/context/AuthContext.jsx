@@ -57,6 +57,25 @@ export const AuthProvider = ({ children }) => {
     hasPermission
   };
 
+  useEffect(() => {
+    const interceptor = axios.interceptors.response.use(
+      (response) => response,
+      async (error) => {
+        if (error.response && error.response.status === 401) {
+          await logout();
+          // Optional: You could enable this if you want to force redirect, 
+          // but usually logout() clearing state triggers ProtectedRoute to redirect.
+          // router.push('/login'); 
+        }
+        return Promise.reject(error);
+      }
+    );
+
+    return () => {
+      axios.interceptors.response.eject(interceptor);
+    };
+  }, []);
+
   return (
     <AuthContext.Provider value={value}>
       {children}

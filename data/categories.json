@@ -1,0 +1,17 @@
+[
+    {
+        "id": "diger",
+        "name": "Diğer",
+        "slug": "diger"
+    },
+    {
+        "id": "all",
+        "name": "Tümü",
+        "slug": "all"
+    },
+    {
+        "id": "urun",
+        "name": "Ürünler",
+        "slug": "urun"
+    }
+]

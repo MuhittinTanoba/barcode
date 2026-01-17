@@ -1,213 +1,215 @@
-'use client'
+'use client';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import appConfig from '../../config';
+import { useLanguage } from '../../context/LanguageContext';
 
 const CategoryManagement = () => {
-  const [categories, setCategories] = useState([]);
-  const [isAddingCategory, setIsAddingCategory] = useState(false);
-  const [newCategory, setNewCategory] = useState({
-    name: '',
-    description: ''
-  });
-  const [editingCategory, setEditingCategory] = useState(null);
+    const { t } = useLanguage();
+    const [categories, setCategories] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isAdding, setIsAdding] = useState(false);
+    const [editingCategory, setEditingCategory] = useState(null);
+    const [message, setMessage] = useState(null);
 
-  useEffect(() => {
-    fetchCategories();
-  }, []);
+    const [newCategory, setNewCategory] = useState({
+        name: '',
+        slug: ''
+    });
 
-  const fetchCategories = async () => {
-    try {
-      const response = await axios.get(appConfig.categoryApiUrl);
-      setCategories(response.data);
-    } catch (error) {
-      console.error('Error fetching categories:', error);
-    }
-  };
+    const [searchQuery, setSearchQuery] = useState('');
 
-  const handleAddCategory = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post(appConfig.categoryApiUrl, newCategory);
-      setIsAddingCategory(false);
-      setNewCategory({ name: '', description: '' });
-      fetchCategories();
-    } catch (error) {
-      console.error('Error adding category:', error);
-    }
-  };
-
-  const handleUpdateCategory = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.put(`${appConfig.categoryApiUrl}/${editingCategory._id}`, editingCategory);
-      setEditingCategory(null);
-      fetchCategories();
-    } catch (error) {
-      console.error('Error updating category:', error);
-    }
-  };
-
-  const handleDeleteCategory = async (id) => {
-    if (window.confirm('Are you sure you want to delete this category?')) {
-      try {
-        await axios.delete(`${appConfig.categoryApiUrl}/${id}`);
+    useEffect(() => {
         fetchCategories();
-      } catch (error) {
-        console.error('Error deleting category:', error);
-      }
-    }
-  };
+    }, []);
 
-  return (
-    <div className="p-4">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">Category Management</h2>
-        <button
-          onClick={() => setIsAddingCategory(true)}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex items-center gap-2"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
-          </svg>
-          Add New Category
-        </button>
-      </div>
+    const fetchCategories = async () => {
+        setIsLoading(true);
+        try {
+            const res = await axios.get('/api/categories');
+            setCategories(res.data);
+        } catch (error) {
+            console.error(error);
+            showMessage('error', 'Failed to fetch categories');
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
-      {isAddingCategory && (
-        <div className="mb-4 p-4 bg-gray-50 rounded">
-          <h3 className="text-lg font-semibold mb-2">Add New Category</h3>
-          <form onSubmit={handleAddCategory}>
-            <div className="space-y-4">
-              <input
-                type="text"
-                placeholder="Category Name"
-                value={newCategory.name}
-                onChange={(e) => setNewCategory({ ...newCategory, name: e.target.value })}
-                className="w-full border p-2 rounded"
-                required
-              />
-              <textarea
-                placeholder="Description"
-                value={newCategory.description}
-                onChange={(e) => setNewCategory({ ...newCategory, description: e.target.value })}
-                className="w-full border p-2 rounded"
-                rows="3"
-              />
+    const showMessage = (type, text) => {
+        setMessage({ type, text });
+        setTimeout(() => setMessage(null), 3000);
+    };
+
+    const handleAdd = async (e) => {
+        e.preventDefault();
+        try {
+            const id = newCategory.slug; 
+            await axios.post('/api/categories', { ...newCategory, id });
+            setNewCategory({ name: '', slug: '' });
+            setIsAdding(false);
+            fetchCategories();
+            showMessage('success', 'Category added');
+        } catch (error) {
+            showMessage('error', 'Failed to add category');
+        }
+    };
+
+    const handleUpdate = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.put('/api/categories', editingCategory);
+            setEditingCategory(null);
+            fetchCategories();
+            showMessage('success', 'Category updated');
+        } catch (error) {
+            showMessage('error', 'Failed to update category');
+        }
+    };
+
+    const handleDelete = async (id) => {
+        if (!window.confirm('Are you sure?')) return;
+        try {
+            await axios.delete(`/api/categories?id=${id}`);
+            fetchCategories();
+            showMessage('success', 'Category deleted');
+        } catch (error) {
+             showMessage('error', error.response?.data?.message || 'Failed to delete category');
+        }
+    };
+
+    const handleNameChange = (val, isEditing = false) => {
+        const slug = val.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
+        if (isEditing) {
+            setEditingCategory({ ...editingCategory, name: val, slug });
+        } else {
+            setNewCategory({ name: val, slug });
+        }
+    };
+
+    const filteredCategories = categories.filter(c => 
+        c.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        c.slug.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    return (
+        <div className="p-6 max-w-7xl mx-auto">
+             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+                <div>
+                    <h2 className="text-3xl font-bold text-gray-900 tracking-tight">{t('categories') || 'Categories'}</h2>
+                    <p className="text-gray-500 mt-1">Manage product categories</p>
+                </div>
+                <button
+                    onClick={() => setIsAdding(true)}
+                   className="bg-primary text-primary-foreground px-6 py-3 rounded-xl shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all duration-300 flex items-center gap-2 font-medium"
+                >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
+                    Add Category
+                </button>
             </div>
-            <div className="mt-4 flex gap-2">
-              <button
-                type="submit"
-                className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 flex items-center gap-2"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                Save
-              </button>
-              <button
-                type="button"
-                onClick={() => setIsAddingCategory(false)}
-                className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 flex items-center gap-2"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-                Cancel
-              </button>
-            </div>
-          </form>
-        </div>
-      )}
 
-      <div className="bg-white rounded-lg shadow overflow-hidden">
-        <table className="min-w-full">
-          <thead className="bg-gray-50">
-            <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-            {categories.map((category) => (
-              <tr key={category._id}>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  {editingCategory?._id === category._id ? (
+            {/* Search Bar */}
+            <div className="mb-6">
+                <div className="relative">
                     <input
-                      type="text"
-                      value={editingCategory.name}
-                      onChange={(e) => setEditingCategory({ ...editingCategory, name: e.target.value })}
-                      className="border p-1 rounded"
+                        type="text"
+                        placeholder="Search categories..."
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
                     />
-                  ) : (
-                    category.name
-                  )}
-                </td>
-                <td className="px-6 py-4">
-                  {editingCategory?._id === category._id ? (
-                    <textarea
-                      value={editingCategory.description}
-                      onChange={(e) => setEditingCategory({ ...editingCategory, description: e.target.value })}
-                      className="border p-1 rounded w-full"
-                      rows="2"
-                    />
-                  ) : (
-                    category.description
-                  )}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  {editingCategory?._id === category._id ? (
-                    <div className="flex gap-2">
-                      <button
-                        onClick={handleUpdateCategory}
-                        className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 flex items-center gap-1"
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                        Save
-                      </button>
-                      <button
-                        onClick={() => setEditingCategory(null)}
-                        className="bg-gray-500 text-white px-3 py-1 rounded hover:bg-gray-600 flex items-center gap-1"
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                        </svg>
-                        Cancel
-                      </button>
+                    <svg className="w-5 h-5 text-gray-400 absolute left-3 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+            </div>
+
+            {message && (
+                <div className={`mb-6 p-4 rounded-xl flex items-center gap-3 ${message.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'}`}>
+                     <span className="font-medium">{message.text}</span>
+                </div>
+            )}
+
+            {isAdding && (
+                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+                    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-6">
+                        <h3 className="text-xl font-bold mb-4">Add New Category</h3>
+                        <form onSubmit={handleAdd} className="space-y-4">
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700">Name</label>
+                                <input 
+                                    type="text" 
+                                    required 
+                                    className="mt-1 block w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-primary focus:border-primary"
+                                    value={newCategory.name}
+                                    onChange={(e) => handleNameChange(e.target.value)}
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700">Slug (ID)</label>
+                                <input 
+                                    type="text" 
+                                    required 
+                                    className="mt-1 block w-full border border-gray-300 rounded-lg px-4 py-2 bg-gray-50"
+                                    value={newCategory.slug}
+                                    readOnly
+                                />
+                            </div>
+                            <div className="flex gap-3 pt-4">
+                                <button type="button" onClick={() => setIsAdding(false)} className="flex-1 px-4 py-2 border border-gray-300 rounded-lg">Cancel</button>
+                                <button type="submit" className="flex-1 bg-primary text-white px-4 py-2 rounded-lg">Save</button>
+                            </div>
+                        </form>
                     </div>
-                  ) : (
-                    <div className="flex gap-2">
-                      <button
-                        onClick={() => setEditingCategory(category)}
-                        className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 flex items-center gap-1"
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                          <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
-                        </svg>
-                        Edit
-                      </button>
-                      <button
-                        onClick={() => handleDeleteCategory(category._id)}
-                        className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 flex items-center gap-1"
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
-                        </svg>
-                        Delete
-                      </button>
-                    </div>
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
+                </div>
+            )}
+
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <table className="min-w-full divide-y divide-gray-200">
+                    <thead className="bg-gray-50/50">
+                        <tr>
+                            <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase">Name</th>
+                            <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase">Slug / ID</th>
+                            <th className="px-6 py-4 text-right text-xs font-semibold text-gray-500 uppercase">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-200">
+                        {filteredCategories.map((cat) => (
+                            <tr key={cat.id} className="hover:bg-gray-50/50">
+                                <td className="px-6 py-4">
+                                    {editingCategory?.id === cat.id ? (
+                                        <input 
+                                            type="text" 
+                                            className="border rounded px-2 py-1 w-full" 
+                                            value={editingCategory.name} 
+                                            onChange={(e) => setEditingCategory({...editingCategory, name: e.target.value})}
+                                        />
+                                    ) : (
+                                        <span className="font-medium text-gray-900">{cat.name}</span>
+                                    )}
+                                </td>
+                                <td className="px-6 py-4 text-sm text-gray-500">{cat.slug}</td>
+                                <td className="px-6 py-4 text-right space-x-2">
+                                    {editingCategory?.id === cat.id ? (
+                                        <>
+                                            <button onClick={handleUpdate} className="text-green-600 hover:text-green-900 font-medium">Save</button>
+                                            <button onClick={() => setEditingCategory(null)} className="text-gray-600 hover:text-gray-900">Cancel</button>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <button onClick={() => setEditingCategory(cat)} className="text-blue-600 hover:text-blue-900">Edit</button>
+                                            {cat.id !== 'all' && (
+                                                <button onClick={() => handleDelete(cat.id)} className="text-red-600 hover:text-red-900">Delete</button>
+                                            )}
+                                        </>
+                                    )}
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    );
 };
 
-export default CategoryManagement; 
+export default CategoryManagement;

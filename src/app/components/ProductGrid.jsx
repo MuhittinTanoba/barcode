@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import appConfig from '../config';
-import ProductOptionsModal from './ProductOptionsModal';
+import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
 
 const ProductCard = ({ product, onClick }) => {
@@ -24,9 +24,6 @@ const ProductCard = ({ product, onClick }) => {
       <div className="p-5 flex-grow flex flex-col justify-between w-full">
         <div>
           <h3 className="text-lg font-semibold text-foreground truncate mb-2">{product.title}</h3>
-          {product.description && (
-            <p className="text-sm text-muted-foreground line-clamp-2 mb-3">{product.description}</p>
-          )}
         </div>
         <div className="flex items-center justify-between mt-2">
           <p className="text-xl font-bold text-primary">{product.price?.toFixed(2)} TL</p>
@@ -46,7 +43,7 @@ const ProductGrid = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -57,10 +54,11 @@ const ProductGrid = () => {
         const data = await response.json();
         if (Array.isArray(data)) {
            const mappedProducts = data.map(p => ({
-             _id: p.barkod,
+             _id: p.urun_kodu,
              title: p.urun_adi,
-             price: parseFloat(p.deger.replace(',', '.')),
+             price: p.deger ? parseFloat(p.deger.toString().replace(',', '.')) : 0,
              description: p.urun_kodu,
+             category: p.category, // Include category
              options: p.options || [],
              // Add other fields if needed
            }));
@@ -79,7 +77,24 @@ const ProductGrid = () => {
     fetchProducts();
   }, []);
 
-  const filteredProducts = products; // Remove category filtering for now or adapt if categories added later
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('diger');
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const res = await axios.get('/api/categories');
+        setCategories(res.data);
+      } catch (err) {
+        console.error("Error fetching categories:", err);
+      }
+    };
+    fetchCategories();
+  }, []);
+
+  const filteredProducts = selectedCategory === 'all' 
+    ? products 
+    : products.filter(p => (p.category || 'urun') === selectedCategory);
 
   if (loading) {
     return (
@@ -113,37 +128,46 @@ const ProductGrid = () => {
     );
   }
 
-  if (filteredProducts.length === 0) {
-    return (
-      <div className="text-center py-16">
-        <div className="flex flex-col items-center space-y-4">
-          <svg className="w-16 h-16 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-          </svg>
-          <p className="text-lg text-slate-500">{t('noProductsFound')}</p>
+  return (
+    <div className="flex flex-col h-full">
+      {/* Category Tabs */}
+      <div className="mb-4 overflow-x-auto pb-2 scrollbar-hide flex-none px-2">
+        <div className="flex space-x-2">
+          {categories.map(category => (
+            <button
+              key={category.id}
+              onClick={() => setSelectedCategory(category.slug)}
+              className={`px-4 py-2 rounded-lg whitespace-nowrap text-sm font-medium transition-colors ${
+                selectedCategory === category.slug
+                  ? 'bg-primary text-primary-foreground shadow-md'
+                  : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'
+              }`}
+            >
+              {category.name}
+            </button>
+          ))}
         </div>
       </div>
-    );
-  }
 
-  return (
-    <>
-      {!selectedProduct && (
-        <div className="overflow-y-auto max-h-[80vh]">
-          <div className="grid grid-cols-2 gap-4">
+      {filteredProducts.length === 0 ? (
+        <div className="text-center py-16 flex-grow flex items-center justify-center">
+           <div className="flex flex-col items-center space-y-4">
+            <svg className="w-16 h-16 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            </svg>
+            <p className="text-lg text-slate-500">{t('noProductsFound')}</p>
+          </div>
+        </div>
+      ) : (
+        <div className="overflow-y-auto flex-grow min-h-0 -mx-1 px-1">
+          <div className="grid grid-cols-2 xl:grid-cols-3 gap-4 pb-4">
             {filteredProducts.map((product) => (
-              <ProductCard key={product._id} product={product} onClick={() => setSelectedProduct(product)} />
+              <ProductCard key={product._id} product={product} onClick={() => addToCart(product)} />
             ))}
           </div>
         </div>
       )}
-      {selectedProduct && (
-        <ProductOptionsModal
-          product={selectedProduct}
-          onClose={() => setSelectedProduct(null)}
-        />
-      )}
-    </>
+    </div>
   );
 };
 

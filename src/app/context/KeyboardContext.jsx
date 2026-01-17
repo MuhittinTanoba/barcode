@@ -11,7 +11,18 @@ export function KeyboardProvider({ children }) {
   const keyboardRef = useRef(null);
   const activeInputRef = useRef(null); // Store reference to the actual DOM element
 
+  const [isKeyboardEnabled, setIsKeyboardEnabled] = useState(true);
+
+  const toggleKeyboardEnabled = () => {
+    setIsKeyboardEnabled(prev => !prev);
+    if (isKeyboardEnabled) { // if currently enabled, we are disabling, so close it
+        closeKeyboard();
+    }
+  };
+
   const openKeyboard = (inputElement) => {
+    if (!isKeyboardEnabled) return; // Prevent opening if disabled
+
     activeInputRef.current = inputElement;
     setInputValue(inputElement.value);
     setInputName(inputElement.name || "default");
@@ -75,10 +86,11 @@ export function KeyboardProvider({ children }) {
       setInputValue, 
       onChange,
       onKeyPress,
-      onKeyPress,
       inputName,
       keyboardRef,
-      keyboardLayout
+      keyboardLayout,
+      isKeyboardEnabled,
+      toggleKeyboardEnabled
     }}>
       {children}
     </KeyboardContext.Provider>

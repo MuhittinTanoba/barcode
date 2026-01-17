@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useCart } from '../context/CartContext';
 
-const BarcodeListener = () => {
+const BarcodeListener = ({ onNotFound }) => {
     const { addToCart } = useCart();
     const [barcode, setBarcode] = useState('');
     const [products, setProducts] = useState([]);
@@ -15,9 +15,10 @@ const BarcodeListener = () => {
                 const data = await response.json();
                 if (Array.isArray(data)) {
                      const mappedProducts = data.map(p => ({
-                        _id: p.barkod,
+                        _id: p.urun_kodu,
+                        barcode: p.barkod,
                         title: p.urun_adi,
-                        price: parseFloat(p.deger.replace(',', '.')),
+                        price: p.deger ? parseFloat(p.deger.toString().replace(',', '.')) : 0,
                         description: p.urun_kodu,
                       }));
                     setProducts(mappedProducts);
@@ -38,14 +39,16 @@ const BarcodeListener = () => {
 
             if (e.key === 'Enter') {
                 if (barcode) {
-                    const product = products.find(p => p._id === barcode);
+                    const product = products.find(p => p.barcode === barcode);
                     if (product) {
                         addToCart(product);
                         // Optional: Play a beep sound
                         console.log('Product found:', product.title);
                     } else {
                         console.log('Product not found for barcode:', barcode);
-                        // Optional: Show error
+                        if (onNotFound) {
+                            onNotFound(barcode);
+                        }
                     }
                     setBarcode('');
                 }
