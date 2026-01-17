@@ -56,35 +56,3 @@ if (fs.existsSync(envSource)) {
 }
 
 console.log('Build preparation complete!');
-
-// Rebuild native modules for Electron
-console.log('Rebuilding native modules for Electron...');
-const { execSync } = require('child_process');
-
-try {
-    // 1. Get Electron Version
-    console.log('Detecting Electron version...');
-    // We run electron --version from the local node_modules
-    const electronVersionOutput = execSync('npx electron --version', {
-        cwd: path.join(__dirname, '..'),
-        encoding: 'utf8'
-    }).trim();
-
-    // Output format is usually "v1.2.3", remove 'v' if present
-    const electronVersion = electronVersionOutput.replace(/^v/, '');
-    console.log(`Target Electron version: ${electronVersion}`);
-
-    // 2. Rebuild
-    // We need to run this from the project root, targeting the standalone directory
-    const electronRebuildCmd = `npx @electron/rebuild --module-dir "${targetDir}" --version ${electronVersion} --force --only better-sqlite3`;
-    console.log(`Running: ${electronRebuildCmd}`);
-
-    execSync(electronRebuildCmd, {
-        cwd: path.join(__dirname, '..'), // Run from root where electron devDep is
-        stdio: 'inherit'
-    });
-    console.log('Native modules rebuilt successfully.');
-} catch (error) {
-    console.error('Failed to rebuild native modules:', error);
-    process.exit(1);
-}
