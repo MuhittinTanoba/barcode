@@ -51,3 +51,6 @@ orders.db
 
 #config
 src/app/config/printers.js
+
+# data files
+/data
