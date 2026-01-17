@@ -72,7 +72,6 @@ class PrinterManager {
       printer.bold(true);
       printer.println('MUTFAK FISI');
       printer.bold(false);
-      printer.println(`Masa: ${orderData.tableId?.number || 'Paket'}`);
       const orderId = orderData._id ? orderData._id.toString() : '????';
       printer.println(`Siparis No: ${orderId.slice(-4)}`);
       printer.println(`Tarih: ${new Date().toLocaleString('tr-TR')}`);
@@ -140,7 +139,6 @@ class PrinterManager {
       printer.bold(false);
       const orderId = orderData._id ? orderData._id.toString() : '??????';
       printer.println(`Siparis: ${orderId.slice(-6)}`);
-      printer.println(`Masa: ${orderData.tableId?.number || 'Paket'}`);
       printer.println(`Tarih: ${new Date().toLocaleString('tr-TR')}`);
       printer.println(divider);
 
