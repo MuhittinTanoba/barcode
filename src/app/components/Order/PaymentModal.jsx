@@ -36,8 +36,8 @@ const PaymentModal = ({ total, items = [], onClose, onProcessPayment }) => {
       setStep('summary');
     } catch (error) {
       console.error(error);
-      // Stay on current step or show error
-      alert(t('errorCreatingOrder'));
+      const errorMessage = error.response?.data?.message || error.message || t('errorCreatingOrder');
+      alert(`${t('errorCreatingOrder')}: ${errorMessage}\n${JSON.stringify(error.response?.data || {})}`);
     } finally {
       setIsProcessing(false);
     }

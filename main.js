@@ -31,7 +31,8 @@ function startServer() {
         PORT: PORT.toString(),
         HOSTNAME: 'localhost',
         NODE_ENV: 'production',
-        ELECTRON_RUN_AS_NODE: '1'
+        ELECTRON_RUN_AS_NODE: '1',
+        USER_DATA_PATH: app.getPath('userData')
       },
       cwd: cwd
     });

@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server';
-import db from '@/lib/db';
+import getDb from '@/lib/db';
 
 export async function GET(request, { params }) {
   try {
     const { id } = await params; // await params in Next.js 15
+    const db = getDb();
     const order = db.prepare('SELECT * FROM orders WHERE id = ?').get(id);
 
     if (!order) {
@@ -26,19 +27,13 @@ export async function PUT(request, { params }) {
     const { id } = await params;
     const body = await request.json();
 
-    // SQLite update construction is manual compared to Mongoose
-    // For now, let's implement a simple update for common fields if table exists
-    // Or just a stub if this is not critical for the "Barcode Product Management" task
+    const db = getDb();
 
     // Check if order exists
     const order = db.prepare('SELECT * FROM orders WHERE id = ?').get(id);
     if (!order) {
       return NextResponse.json({ message: 'Order not found' }, { status: 404 });
     }
-
-    // Note: Implementing a full dynamic SQL UPDATE here is risky without knowing exact schema columns.
-    // However, to fix the build, we just need to remove MongoDB dependecies.
-    // Let's assume we update 'status' or 'total' if provided.
 
     const updates = [];
     const values = [];
@@ -68,6 +63,7 @@ export async function PUT(request, { params }) {
 export async function DELETE(request, { params }) {
   try {
     const { id } = await params;
+    const db = getDb();
     const info = db.prepare('DELETE FROM orders WHERE id = ?').run(id);
 
     if (info.changes > 0) {

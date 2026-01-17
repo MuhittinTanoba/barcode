@@ -41,7 +41,7 @@ const BarcodeListener = ({ onNotFound }) => {
                                 setModalOpen(true);
                             } else {
                                 const mappedProduct = {
-                                    _id: productData.barkod,
+                                    _id: `${productData.barkod}-${productData.urun_adi}`,
                                     barcode: productData.barkod,
                                     title: productData.urun_adi,
                                     price: price,
@@ -89,7 +89,7 @@ const BarcodeListener = ({ onNotFound }) => {
 
              // 2. Add to cart with new price
              const mappedProduct = {
-                _id: pendingProduct.barkod,
+                _id: `${pendingProduct.barkod}-${pendingProduct.urun_adi}`,
                 barcode: pendingProduct.barkod,
                 title: pendingProduct.urun_adi,
                 price: parseFloat(newPrice.replace(',', '.')),

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'standalone',
-    serverExternalPackages: ['bcryptjs', 'mongoose'],
+    serverExternalPackages: ['bcryptjs', 'mongoose', 'better-sqlite3'],
     async headers() {
         return [
             {

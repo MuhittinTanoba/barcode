@@ -82,9 +82,10 @@ const ProductGrid = () => {
       const data = await response.json();
       
       let newProducts = [];
-      if (data.products && Array.isArray(data.products)) {
-         newProducts = data.products.map(p => ({
-             _id: p.barkod,
+       if (data.products && Array.isArray(data.products)) {
+          newProducts = data.products.map(p => ({
+             _id: `${p.barkod}-${p.urun_adi}`,
+             barcode: p.barkod,
              title: p.urun_adi,
              price: p.deger ? parseFloat(p.deger.toString().replace(',', '.')) : 0,
              description: '',
