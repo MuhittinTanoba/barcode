@@ -10,7 +10,6 @@ const QuickAddProductModal = ({ isOpen, onClose, initialBarcode, onSuccess }) =>
   const [newProduct, setNewProduct] = useState({
     barkod: initialBarcode || '',
     urun_adi: '',
-    urun_kodu: '',
     deger: '',
     category: 'urun'
   });
@@ -45,7 +44,6 @@ const QuickAddProductModal = ({ isOpen, onClose, initialBarcode, onSuccess }) =>
       setNewProduct({
         barkod: '',
         urun_adi: '',
-        urun_kodu: '',
         deger: '',
         category: 'urun'
       });
@@ -89,18 +87,6 @@ const QuickAddProductModal = ({ isOpen, onClose, initialBarcode, onSuccess }) =>
                 onChange={(e) => setNewProduct({ ...newProduct, urun_adi: e.target.value })}
                 className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
                 placeholder="Product Name"
-                required
-              />
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-700">{t('productCode')}</label>
-              <input
-                type="text"
-                value={newProduct.urun_kodu}
-                onChange={(e) => setNewProduct({ ...newProduct, urun_kodu: e.target.value })}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
-                placeholder="CODE-123"
                 required
               />
             </div>

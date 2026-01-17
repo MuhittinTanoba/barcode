@@ -9,7 +9,13 @@ const ProductManagement = () => {
   const [categories, setCategories] = useState([]);
   const [isAddingProduct, setIsAddingProduct] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
+  
+  // Pagination & Search States
   const [searchQuery, setSearchQuery] = useState('');
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(false);
+
   const [isBulkModalOpen, setIsBulkModalOpen] = useState(false);
   const [bulkAction, setBulkAction] = useState({ type: 'percentage', action: 'increase', value: '' });
   const [message, setMessage] = useState(null);
@@ -17,15 +23,113 @@ const ProductManagement = () => {
   const [newProduct, setNewProduct] = useState({
     barkod: '',
     urun_adi: '',
-    urun_kodu: '',
     deger: '',
     category: 'urun'
   });
 
   useEffect(() => {
-    fetchProducts();
+    fetchProducts(page, searchQuery);
     fetchCategories();
-  }, []);
+  }, [page]); // Fetch when page changes. Search is handled manually or debounce 
+
+  const handleBarcodeScan = async (scannedBarcode) => {
+    try {
+        setLoading(true);
+        // Direct exact match search handles find logic
+        const response = await axios.get(`/api/products?barcode=${scannedBarcode}`);
+        
+        let foundProduct = null;
+        if (Array.isArray(response.data) && response.data.length > 0) {
+            foundProduct = response.data[0];
+        } else if (response.data.products && Array.isArray(response.data.products) && response.data.products.length > 0) {
+            foundProduct = response.data.products.find(p => p.barkod === scannedBarcode) || response.data.products[0];
+        }
+
+        if (foundProduct) {
+            setProducts([foundProduct]);
+            setEditingProduct(foundProduct);
+            showMessage('success', t('productFound') || 'Product found!');
+        } else {
+            // Not found -> Open add modal
+            setNewProduct(prev => ({ 
+              ...prev, 
+              barkod: scannedBarcode, 
+              urun_adi: '', 
+              deger: '', 
+              category: 'urun' 
+            }));
+            setIsAddingProduct(true);
+            showMessage('info', t('productNotFoundAdd') || 'Product not found. Ready to add.');
+        }
+    } catch (error) {
+        console.error("Scan error:", error);
+        showMessage('error', 'Error scanning barcode');
+    } finally {
+        setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    let barcodeBuffer = '';
+    let timeout;
+    
+    const handleGlobalKeyDown = (e) => {
+         // Prevent scanning if we are actively editing or adding (unless we want to support scanning INTO fields, which works natively)
+         // If a modal is open, we usually don't want global scan logic to switch contexts abruptly.
+         if (isAddingProduct || editingProduct || isBulkModalOpen) return;
+         
+         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+         if (e.key === 'Enter') {
+             if (barcodeBuffer) {
+                 handleBarcodeScan(barcodeBuffer);
+                 barcodeBuffer = '';
+             }
+         } else if (e.key.length === 1) {
+             barcodeBuffer += e.key;
+             clearTimeout(timeout);
+             timeout = setTimeout(() => barcodeBuffer = '', 200);
+         }
+    };
+
+    window.addEventListener('keydown', handleGlobalKeyDown);
+    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+  }, [isAddingProduct, editingProduct, isBulkModalOpen]);
+
+  // Debounce search
+  useEffect(() => {
+      // Don't trigger if we just set products manually via scan (we can check simple conditions or just let it be)
+      // If searchQuery is empty, we don't want to reset if we are viewing a scanned product?
+      // Actually, if searchQuery changes, we do want to search. If it doesn't, this won't run.
+      // Scan logic does NOT update searchQuery, so this WON'T run. SAFE.
+      
+      const delayDebounceFn = setTimeout(() => {
+        // Only fetch if we are NOT in the middle of a scan result view (which usually implies empty search query but 1 product)
+        // A simple heuristic: if searchQuery is empty but products.length is 1 and editingProduct is set, maybe don't refresh?
+        // But refreshing page 1 with '' query is standard behavior.
+        
+        // If query is empty, it resets to page 1 full list.
+        // We only want this if user MANUALLY cleared the search.
+        // But useEffect runs on mount too.
+        
+        // We will let this run. If user scans, LIST updates. SearchQuery remains ''.
+        // This useEffect depends on [searchQuery]. If scan DOES NOT change searchQuery, this does not run.
+        if (searchQuery !== '') {
+            setPage(1); 
+            fetchProducts(1, searchQuery);
+        } else {
+            // If query is empty, we might want to reload all products.
+            // But if we just scanned, we don't want to reload.
+            // We can check if we are in 'scan view' state? No need for complex state.
+            // If editingProduct is null, we load all. 
+            if (!editingProduct) {
+                 fetchProducts(1, '');
+            }
+        }
+      }, 500);
+
+      return () => clearTimeout(delayDebounceFn);
+  }, [searchQuery, editingProduct]); // Added editingProduct dependency to refetch list when edit cancelled
 
   const showMessage = (type, text) => {
     setMessage({ type, text });
@@ -41,13 +145,24 @@ const ProductManagement = () => {
     }
   };
 
-  const fetchProducts = async () => {
+  const fetchProducts = async (currentPage = 1, query = '') => {
+    setLoading(true);
     try {
-      const response = await axios.get('/api/products');
-      setProducts(response.data);
+      const response = await axios.get(`/api/products?page=${currentPage}&limit=20&search=${query}`);
+      // API now returns { products, pagination }
+      if (response.data && response.data.products) {
+          setProducts(response.data.products);
+          setTotalPages(response.data.pagination.totalPages);
+      } else {
+           // Fallback if API hasn't updated or returns array (backward compat check, though we updated API)
+           console.warn('API returned unexpected format');
+           setProducts(Array.isArray(response.data) ? response.data : []);
+      }
     } catch (error) {
       console.error('Error fetching products:', error);
       showMessage('error', 'Failed to load products');
+    } finally {
+        setLoading(false);
     }
   };
 
@@ -59,11 +174,10 @@ const ProductManagement = () => {
       setNewProduct({
         barkod: '',
         urun_adi: '',
-        urun_kodu: '',
         deger: '',
         category: 'urun'
       });
-      fetchProducts();
+      fetchProducts(page, searchQuery);
       showMessage('success', t('productAdded') || 'Product added successfully');
     } catch (error) {
       console.error('Error adding product:', error);
@@ -76,7 +190,7 @@ const ProductManagement = () => {
     try {
       await axios.put('/api/products', editingProduct);
       setEditingProduct(null);
-      fetchProducts();
+      fetchProducts(page, searchQuery);
       showMessage('success', t('productUpdated') || 'Product updated successfully');
     } catch (error) {
       console.error('Error updating product:', error);
@@ -88,7 +202,7 @@ const ProductManagement = () => {
     if (window.confirm(t('confirmDelete'))) {
       try {
         await axios.delete(`/api/products?barkod=${barkod}`);
-        fetchProducts();
+        fetchProducts(page, searchQuery);
         showMessage('success', t('productDeleted') || 'Product deleted successfully');
       } catch (error) {
         console.error('Error deleting product:', error);
@@ -104,7 +218,7 @@ const ProductManagement = () => {
     try {
         await axios.put('/api/products/bulk', bulkAction);
         setIsBulkModalOpen(false);
-        fetchProducts();
+        fetchProducts(page, searchQuery);
         showMessage('success', 'Bulk update successful');
     } catch (error) {
         console.error(error);
@@ -112,11 +226,7 @@ const ProductManagement = () => {
     }
   };
 
-  const filteredProducts = products.filter(p => 
-    p.urun_adi.toLowerCase().includes(searchQuery.toLowerCase()) || 
-    p.barkod.includes(searchQuery) ||
-    p.urun_kodu.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  // Removed client-side filtering "filteredProducts" variable. Use "products" directly.
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
@@ -151,7 +261,7 @@ const ProductManagement = () => {
         <div className="relative">
             <input
                 type="text"
-                placeholder="Search products by name, barcode or code..."
+                placeholder="Search products by name or barcode..."
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -159,6 +269,11 @@ const ProductManagement = () => {
             <svg className="w-5 h-5 text-gray-400 absolute left-3 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
+            {loading && (
+                <div className="absolute right-3 top-3.5">
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-primary"></div>
+                </div>
+            )}
         </div>
       </div>
 
@@ -270,18 +385,6 @@ const ProductManagement = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">{t('productCode')}</label>
-                  <input
-                    type="text"
-                    value={newProduct.urun_kodu}
-                    onChange={(e) => setNewProduct({ ...newProduct, urun_kodu: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
-                    placeholder="CODE-123"
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">{t('price')} (TL)</label>
                   <input
                     type="text"
@@ -343,8 +446,8 @@ const ProductManagement = () => {
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {filteredProducts.map((product) => (
-                <tr key={product.urun_kodu} className="hover:bg-gray-50/50 transition-colors">
+              {products.map((product) => (
+                <tr key={product.barkod} className="hover:bg-gray-50/50 transition-colors">
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
                      {editingProduct?.barkod === product.barkod ? ( // Check using unique ID if strictly needed, but barcode is unique here mostly
                        <span className="font-mono text-gray-400">{product.barkod}</span>
@@ -433,10 +536,42 @@ const ProductManagement = () => {
               ))}
             </tbody>
           </table>
+          
+          {/* Pagination Controls */}
+          {products.length > 0 && (
+            <div className="bg-gray-50 border-t border-gray-200 px-6 py-4 flex items-center justify-between">
+              <div className="text-sm text-gray-500">
+                Page <span className="font-medium">{page}</span> of <span className="font-medium">{totalPages}</span>
+              </div>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setPage(p => Math.max(1, p - 1))}
+                  disabled={page === 1}
+                  className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Previous
+                </button>
+                <button
+                  onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+                  disabled={page === totalPages}
+                  className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          )}
+
+          {products.length === 0 && !loading && (
+             <div className="text-center py-12 text-gray-500">
+               No products found
+             </div>
+          )}
         </div>
       </div>
     </div>
   );
+
 };
 
 export default ProductManagement;

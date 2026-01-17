@@ -44,41 +44,14 @@ const ProductGrid = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { addToCart } = useCart();
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      setLoading(true);
-      setError(null);
-      try {
-        const response = await fetch('/api/products');
-        const data = await response.json();
-        if (Array.isArray(data)) {
-           const mappedProducts = data.map(p => ({
-             _id: p.urun_kodu,
-             title: p.urun_adi,
-             price: p.deger ? parseFloat(p.deger.toString().replace(',', '.')) : 0,
-             description: p.urun_kodu,
-             category: p.category, // Include category
-             options: p.options || [],
-             // Add other fields if needed
-           }));
-          setProducts(mappedProducts);
-        } else {
-          throw new Error('Invalid products data');
-        }
-      } catch (err) {
-        setError(err.message || 'Failed to fetch products');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-
-    fetchProducts();
-  }, []);
+  
+  // Pagination State
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
+  const LIMIT = 24; // Items per page
 
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('diger');
+  const [selectedCategory, setSelectedCategory] = useState({ slug: 'all', name: 'Tümü' }); // Store object to track active state better
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -92,11 +65,69 @@ const ProductGrid = () => {
     fetchCategories();
   }, []);
 
-  const filteredProducts = selectedCategory === 'all' 
-    ? products 
-    : products.filter(p => (p.category || 'urun') === selectedCategory);
+  // Reset products when category changes
+  useEffect(() => {
+    setProducts([]);
+    setPage(1);
+    setHasMore(true);
+    fetchProducts(1, selectedCategory.slug);
+  }, [selectedCategory]);
 
-  if (loading) {
+  const fetchProducts = async (currentPage, categorySlug) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const categoryParam = categorySlug === 'all' ? '' : `&category=${categorySlug}`;
+      const response = await fetch(`/api/products?page=${currentPage}&limit=${LIMIT}${categoryParam}`);
+      const data = await response.json();
+      
+      let newProducts = [];
+      if (data.products && Array.isArray(data.products)) {
+         newProducts = data.products.map(p => ({
+             _id: p.barkod,
+             title: p.urun_adi,
+             price: p.deger ? parseFloat(p.deger.toString().replace(',', '.')) : 0,
+             description: '',
+             category: p.category, 
+             options: p.options || [],
+           }));
+           
+           if (currentPage === 1) {
+             setProducts(newProducts);
+           } else {
+             setProducts(prev => [...prev, ...newProducts]);
+           }
+
+           // Check if we reached the end
+           if (currentPage >= data.pagination.totalPages) {
+             setHasMore(false);
+           }
+      } else {
+         // Handle fallback if data format changes/error
+          setHasMore(false);
+      }
+    } catch (err) {
+      setError(err.message || 'Failed to fetch products');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const loadMore = () => {
+    if (!loading && hasMore) {
+        const nextPage = page + 1;
+        setPage(nextPage);
+        fetchProducts(nextPage, selectedCategory.slug);
+    }
+  };
+  
+  const handleCategoryClick = (category) => {
+      if (selectedCategory.slug !== category.slug) {
+         setSelectedCategory(category);
+      }
+  };
+
+  if (loading && page === 1 && products.length === 0) {
     return (
       <div className="flex justify-center items-center h-64">
         <div className="flex flex-col items-center space-y-4">
@@ -107,7 +138,7 @@ const ProductGrid = () => {
     );
   }
 
-  if (error) {
+  if (error && products.length === 0) {
     return (
       <div className="text-center py-12">
         <div className="bg-red-50 border border-red-200 rounded-xl p-6 max-w-md mx-auto">
@@ -136,9 +167,9 @@ const ProductGrid = () => {
           {categories.map(category => (
             <button
               key={category.id}
-              onClick={() => setSelectedCategory(category.slug)}
+              onClick={() => handleCategoryClick(category)}
               className={`px-4 py-2 rounded-lg whitespace-nowrap text-sm font-medium transition-colors ${
-                selectedCategory === category.slug
+                selectedCategory.slug === category.slug
                   ? 'bg-primary text-primary-foreground shadow-md'
                   : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'
               }`}
@@ -149,7 +180,7 @@ const ProductGrid = () => {
         </div>
       </div>
 
-      {filteredProducts.length === 0 ? (
+      {products.length === 0 && !loading ? (
         <div className="text-center py-16 flex-grow flex items-center justify-center">
            <div className="flex flex-col items-center space-y-4">
             <svg className="w-16 h-16 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -161,10 +192,23 @@ const ProductGrid = () => {
       ) : (
         <div className="overflow-y-auto flex-grow min-h-0 -mx-1 px-1">
           <div className="grid grid-cols-2 xl:grid-cols-3 gap-4 pb-4">
-            {filteredProducts.map((product) => (
+            {products.map((product) => (
               <ProductCard key={product._id} product={product} onClick={() => addToCart(product)} />
             ))}
           </div>
+          
+          {/* Load More Trigger */}
+          {hasMore && (
+              <div className="py-4 text-center">
+                  <button 
+                    onClick={loadMore}
+                    disabled={loading}
+                    className="bg-gray-100 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-200 transition-colors disabled:opacity-50"
+                  >
+                      {loading ? 'Loading...' : 'Load More'}
+                  </button>
+              </div>
+          )}
         </div>
       )}
     </div>

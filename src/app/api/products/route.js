@@ -9,16 +9,61 @@ const getProducts = () => {
   return JSON.parse(fileParams);
 };
 
-export async function GET() {
+export async function GET(request) {
   try {
-    const products = getProducts();
-    // Simulate the structure the frontend expects, or adapt frontend.
-    // The previous mongo schema had _id, name, price etc.
-    // The new JSON has urun_kodu, urun_adi, barkod, deger.
-    // We should map it to a standard format if we want to keep frontend changes minimal,
-    // OR just return as is and update frontend.
-    // Let's assume we return as is and update frontend.
-    return NextResponse.json(products);
+    const { searchParams } = new URL(request.url);
+    const page = parseInt(searchParams.get('page')) || 1;
+    const limit = parseInt(searchParams.get('limit')) || 20;
+    const search = searchParams.get('search') || '';
+    const category = searchParams.get('category') || '';
+    const barcode = searchParams.get('barcode') || '';
+
+    let products = getProducts();
+
+    // Barcode specific lookup (FAST)
+    if (barcode) {
+      const product = products.find(p => p.barkod === barcode);
+      return NextResponse.json(product ? [product] : []);
+    }
+
+    // Filter by category
+    if (category && category !== 'all' && category !== 'diger') {
+      products = products.filter(p => p.category === category);
+    } else if (category === 'diger') {
+      // Optional: define what 'diger' means if it's meant to be "others" or just a specific category slug.
+      // Assuming it's a category slug based on previous code.
+      products = products.filter(p => p.category === category);
+    }
+
+    // Filter by search query (name or barcode)
+    if (search) {
+      const lowerSearch = search.toLowerCase();
+      products = products.filter(p =>
+        (p.urun_adi && p.urun_adi.toLowerCase().includes(lowerSearch)) ||
+        (p.barkod && p.barkod.includes(search))
+      );
+    }
+
+    // Sort by name (optional but good for UX)
+    // products.sort((a, b) => a.urun_adi.localeCompare(b.urun_adi));
+
+    // Pagination
+    const total = products.length;
+    const totalPages = Math.ceil(total / limit);
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + limit;
+    const paginatedProducts = products.slice(startIndex, endIndex);
+
+    return NextResponse.json({
+      products: paginatedProducts,
+      pagination: {
+        total,
+        page,
+        limit,
+        totalPages
+      }
+    });
+
   } catch (error) {
     return NextResponse.json({ message: error.message }, { status: 500 });
   }
