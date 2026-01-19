@@ -2,6 +2,7 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const { spawn } = require('child_process');
 const { autoUpdater } = require('electron-updater');
+const fs = require('fs');
 
 let serverProcess = null;
 let mainWindow = null;
@@ -16,8 +17,52 @@ ipcMain.on('app-quit', () => {
   app.quit();
 });
 
+function ensureDataFiles() {
+  const userDataPath = app.getPath('userData');
+  const dataPath = path.join(userDataPath, 'data');
+
+  if (!fs.existsSync(dataPath)) {
+    fs.mkdirSync(dataPath, { recursive: true });
+  }
+
+  // Files to preserve/seed
+  const files = ['products.json', 'categories.json', 'employees.json', 'orders.json'];
+
+  // Source depends on environment
+  const sourceBase = app.isPackaged
+    ? path.join(process.resourcesPath, 'data')
+    : path.join(__dirname, 'data');
+
+  files.forEach(file => {
+    const targetPath = path.join(dataPath, file);
+
+    // Only copy if target doesn't exist (don't overwrite user data)
+    if (!fs.existsSync(targetPath)) {
+      const sourcePath = path.join(sourceBase, file);
+      if (fs.existsSync(sourcePath)) {
+        try {
+          fs.copyFileSync(sourcePath, targetPath);
+          console.log(`Seeded ${file} to ${targetPath}`);
+        } catch (err) {
+          console.error(`Failed to seed ${file}:`, err);
+        }
+      } else {
+        console.log(`Source file not found for seeding: ${sourcePath}`);
+        // Create empty file if needed to avoid crash? 
+        // Better to let API handle missing file by returning empty array
+        fs.writeFileSync(targetPath, '[]');
+      }
+    }
+  });
+
+  return dataPath;
+}
+
 function startServer() {
   return new Promise((resolve, reject) => {
+    // Ensure data files exist in UserData
+    const dataPath = ensureDataFiles();
+
     // In production, server.js is in the resources/standalone folder
     const serverPath = app.isPackaged
       ? path.join(process.resourcesPath, 'standalone', 'server.js')
@@ -37,7 +82,7 @@ function startServer() {
         HOSTNAME: 'localhost',
         NODE_ENV: 'production',
         ELECTRON_RUN_AS_NODE: '1',
-        USER_DATA_PATH: app.getPath('userData')
+        USER_DATA_PATH: dataPath // Pass the persistent data path
       },
       cwd: cwd
     });

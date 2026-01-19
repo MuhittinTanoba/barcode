@@ -1,6 +1,6 @@
 {
   "name": "boss-pos",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Boss POS - Point of Sale System",
   "private": true,
   "main": "main.js",
@@ -61,6 +61,7 @@
     ],
     "extraResources": [
       "standalone/**/*",
+      "data/**/*",
       {
         "from": ".env",
         "to": ".env"

@@ -2,9 +2,17 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+const getFilePath = () => {
+  const dir = process.env.USER_DATA_PATH || path.join(process.cwd(), 'data');
+  return path.join(dir, 'products.json');
+};
+
 // Helper to read products
 const getProducts = () => {
-  const filePath = path.join(process.cwd(), 'data', 'products.json');
+  const filePath = getFilePath();
+
+  if (!fs.existsSync(filePath)) return [];
+
   const fileParams = fs.readFileSync(filePath, 'utf8');
   return JSON.parse(fileParams);
 };
@@ -75,8 +83,7 @@ export async function POST(request) {
     const body = await request.json();
     const products = getProducts();
     products.push(body);
-    const filePath = path.join(process.cwd(), 'data', 'products.json');
-    fs.writeFileSync(filePath, JSON.stringify(products, null, 2));
+    fs.writeFileSync(getFilePath(), JSON.stringify(products, null, 2));
     return NextResponse.json(body, { status: 201 });
   } catch (error) {
     return NextResponse.json({ message: error.message }, { status: 500 });
@@ -91,8 +98,7 @@ export async function PUT(request) {
 
     if (index > -1) {
       products[index] = { ...products[index], ...body };
-      const filePath = path.join(process.cwd(), 'data', 'products.json');
-      fs.writeFileSync(filePath, JSON.stringify(products, null, 2));
+      fs.writeFileSync(getFilePath(), JSON.stringify(products, null, 2));
       return NextResponse.json(products[index]);
     }
     return NextResponse.json({ message: 'Product not found' }, { status: 404 });
@@ -115,8 +121,7 @@ export async function DELETE(request) {
     products = products.filter(p => p.barkod !== barkod);
 
     if (products.length !== initialLength) {
-      const filePath = path.join(process.cwd(), 'data', 'products.json');
-      fs.writeFileSync(filePath, JSON.stringify(products, null, 2));
+      fs.writeFileSync(getFilePath(), JSON.stringify(products, null, 2));
       return NextResponse.json({ message: 'Deleted' });
     }
 

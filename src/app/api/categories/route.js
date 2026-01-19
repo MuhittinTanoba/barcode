@@ -2,9 +2,14 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+const getFilePath = () => {
+    const dir = process.env.USER_DATA_PATH || path.join(process.cwd(), 'data');
+    return path.join(dir, 'categories.json');
+};
+
 const getCategories = () => {
     try {
-        const filePath = path.join(process.cwd(), 'data', 'categories.json');
+        const filePath = getFilePath();
         if (fs.existsSync(filePath)) {
             const fileContent = fs.readFileSync(filePath, 'utf8');
             return JSON.parse(fileContent);
@@ -33,8 +38,9 @@ export async function POST(request) {
 
         categories.push(body);
 
-        const filePath = path.join(process.cwd(), 'data', 'categories.json');
-        fs.writeFileSync(filePath, JSON.stringify(categories, null, 2));
+        categories.push(body);
+
+        fs.writeFileSync(getFilePath(), JSON.stringify(categories, null, 2));
 
         return NextResponse.json(body, { status: 201 });
     } catch (error) {
@@ -51,8 +57,7 @@ export async function PUT(request) {
 
         if (index > -1) {
             categories[index] = { ...categories[index], ...body };
-            const filePath = path.join(process.cwd(), 'data', 'categories.json');
-            fs.writeFileSync(filePath, JSON.stringify(categories, null, 2));
+            fs.writeFileSync(getFilePath(), JSON.stringify(categories, null, 2));
             return NextResponse.json(categories[index]);
         }
 
@@ -82,8 +87,7 @@ export async function DELETE(request) {
         categories = categories.filter(c => c.id !== id);
 
         if (categories.length !== initialLength) {
-            const filePath = path.join(process.cwd(), 'data', 'categories.json');
-            fs.writeFileSync(filePath, JSON.stringify(categories, null, 2));
+            fs.writeFileSync(getFilePath(), JSON.stringify(categories, null, 2));
             return NextResponse.json({ message: 'Deleted' });
         }
 
