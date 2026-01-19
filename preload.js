@@ -14,5 +14,8 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 contextBridge.exposeInMainWorld('electronAPI', {
-    quitApp: () => ipcRenderer.send('app-quit')
+    quitApp: () => ipcRenderer.send('app-quit'),
+    onUpdateMessage: (callback) => ipcRenderer.on('update-message', (event, text) => callback(text)),
+    onUpdateDownloaded: (callback) => ipcRenderer.on('update-downloaded', (event) => callback()),
+    getAppVersion: () => ipcRenderer.invoke('get-app-version')
 });

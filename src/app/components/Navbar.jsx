@@ -17,6 +17,26 @@ function Navbar() {
     const [clockMessage, setClockMessage] = useState('');
     const [activeSession, setActiveSession] = useState(null);
     const [elapsedTime, setElapsedTime] = useState('');
+    const [appVersion, setAppVersion] = useState('...');
+    const [updateMessage, setUpdateMessage] = useState('');
+
+    useEffect(() => {
+        // Fetch App Version
+        if (window.electronAPI?.getAppVersion) {
+            window.electronAPI.getAppVersion().then(v => setAppVersion(v));
+        }
+
+        // Listen for updates
+        if (window.electronAPI?.onUpdateMessage) {
+            window.electronAPI.onUpdateMessage((msg) => {
+                // Shorten message for UI
+                if (msg.includes('Downloading')) setUpdateMessage('Downloading...');
+                else if (msg.includes('available')) setUpdateMessage('Update Available');
+                else if (msg.includes('downloaded')) setUpdateMessage('Restart to Update');
+                else setUpdateMessage('');
+            });
+        }
+    }, []);
 
     const checkActiveSession = async () => {
         // Market POS simplification: Disable employee session checking
@@ -216,6 +236,11 @@ function Navbar() {
               </button>
             </div>
           )}
+          
+          <div className="absolute bottom-1 right-2 text-xs text-slate-300 pointer-events-none opacity-50 flex flex-col items-end">
+             <span>v{appVersion}</span>
+             {updateMessage && <span className="text-[10px] text-green-500 animate-pulse">{updateMessage}</span>}
+          </div>
         </div>
       </nav>
     );

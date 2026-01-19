@@ -17,6 +17,10 @@ ipcMain.on('app-quit', () => {
   app.quit();
 });
 
+ipcMain.handle('get-app-version', () => {
+  return app.getVersion();
+});
+
 function ensureDataFiles() {
   const userDataPath = app.getPath('userData');
   const dataPath = path.join(userDataPath, 'data');
