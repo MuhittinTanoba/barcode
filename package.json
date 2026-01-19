@@ -1,6 +1,6 @@
 {
   "name": "boss-pos",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Boss POS - Point of Sale System",
   "private": true,
   "main": "main.js",
@@ -84,7 +84,7 @@
     "publish": {
       "provider": "github",
       "owner": "MuhittinTanoba",
-      "repo": "boss-pos"
+      "repo": "barcode"
     }
   },
   "repository": {
