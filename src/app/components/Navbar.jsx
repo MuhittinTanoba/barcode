@@ -204,6 +204,16 @@ function Navbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                 </svg>
               </button>
+              
+              <button
+                onClick={() => window.electronAPI?.quitApp()}
+                className="text-red-500 hover:text-red-700 hover:bg-red-50 transition-colors duration-200 flex items-center gap-2 p-2 rounded-lg ml-2 border border-transparent hover:border-red-100"
+                title="Exit Application"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </button>
             </div>
           )}
         </div>

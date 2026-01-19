@@ -69,6 +69,9 @@ const ProductManagement = () => {
     }
   };
 
+  const [deleteConfirmation, setDeleteConfirmation] = useState({ isOpen: false, barkod: null });
+  const [bulkConfirmOpen, setBulkConfirmOpen] = useState(false);
+
   useEffect(() => {
     let barcodeBuffer = '';
     let timeout;
@@ -198,23 +201,31 @@ const ProductManagement = () => {
     }
   };
 
-  const handleDeleteProduct = async (barkod) => {
-    if (window.confirm(t('confirmDelete'))) {
-      try {
-        await axios.delete(`/api/products?barkod=${barkod}`);
-        fetchProducts(page, searchQuery);
-        showMessage('success', t('productDeleted') || 'Product deleted successfully');
-      } catch (error) {
-        console.error('Error deleting product:', error);
-        showMessage('error', 'Failed to delete product');
-      }
+  const handleDeleteProduct = (barkod) => {
+    setDeleteConfirmation({ isOpen: true, barkod });
+  };
+
+  const confirmDeleteAction = async () => {
+    if (!deleteConfirmation.barkod) return;
+    
+    try {
+      await axios.delete(`/api/products?barkod=${deleteConfirmation.barkod}`);
+      fetchProducts(page, searchQuery);
+      showMessage('success', t('productDeleted') || 'Product deleted successfully');
+    } catch (error) {
+      console.error('Error deleting product:', error);
+      showMessage('error', 'Failed to delete product');
+    } finally {
+      setDeleteConfirmation({ isOpen: false, barkod: null });
     }
   };
 
-  const handleBulkUpdate = async (e) => {
+  const handleBulkUpdateSubmit = (e) => {
     e.preventDefault();
-    if (!window.confirm('Are you sure you want to update ALL product prices? This cannot be undone.')) return;
-    
+    setBulkConfirmOpen(true);
+  };
+
+  const confirmBulkUpdateAction = async () => {
     try {
         await axios.put('/api/products/bulk', bulkAction);
         setIsBulkModalOpen(false);
@@ -223,6 +234,8 @@ const ProductManagement = () => {
     } catch (error) {
         console.error(error);
         showMessage('error', 'Failed to update products');
+    } finally {
+        setBulkConfirmOpen(false);
     }
   };
 
@@ -302,7 +315,7 @@ const ProductManagement = () => {
             <div className="p-6 border-b border-gray-100 bg-gray-50/50">
               <h3 className="text-xl font-bold text-gray-900">Bulk Price Update</h3>
             </div>
-            <form onSubmit={handleBulkUpdate} className="p-6 space-y-4">
+            <form onSubmit={handleBulkUpdateSubmit} className="p-6 space-y-4">
                 <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Action</label>
                     <select 
@@ -569,6 +582,69 @@ const ProductManagement = () => {
           )}
         </div>
       </div>
+      {/* Delete Confirmation Modal */}
+      {deleteConfirmation.isOpen && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden animate-scale-in">
+            <div className="p-6 text-center">
+              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{t('confirmDelete')}</h3>
+              <p className="text-gray-500 mb-6">Are you sure you want to delete this product? This action cannot be undone.</p>
+              
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setDeleteConfirmation({ isOpen: false, barkod: null })}
+                  className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-medium transition-colors"
+                >
+                  {t('cancel')}
+                </button>
+                <button
+                  onClick={confirmDeleteAction}
+                  className="flex-1 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 font-medium shadow-md transition-all"
+                >
+                  {t('delete')}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Bulk Update Confirmation Modal */}
+      {bulkConfirmOpen && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden animate-scale-in">
+            <div className="p-6 text-center">
+              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Confirm Bulk Update</h3>
+              <p className="text-gray-500 mb-6">Are you sure you want to update ALL product prices? This cannot be undone.</p>
+              
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setBulkConfirmOpen(false)}
+                  className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-medium transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={confirmBulkUpdateAction}
+                  className="flex-1 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 font-medium shadow-md transition-all"
+                >
+                  Confirm
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 

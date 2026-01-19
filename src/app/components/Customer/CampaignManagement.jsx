@@ -8,6 +8,7 @@ const CampaignManagement = () => {
   const [loading, setLoading] = useState(true);
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [editingCampaign, setEditingCampaign] = useState(null);
+  const [deleteConfirmation, setDeleteConfirmation] = useState({ isOpen: false, id: null });
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -76,14 +77,19 @@ const CampaignManagement = () => {
     setShowCreateForm(true);
   };
 
-  const handleDelete = async (campaignId) => {
-    if (window.confirm('Are you sure you want to delete this campaign?')) {
-      try {
-        await axios.delete(`${appConfig.campaignApiUrl}/${campaignId}`);
-        fetchCampaigns();
-      } catch (error) {
-        console.error('Error deleting campaign:', error);
-      }
+  const handleDelete = (campaignId) => {
+    setDeleteConfirmation({ isOpen: true, id: campaignId });
+  };
+
+  const confirmDeleteAction = async () => {
+    if (!deleteConfirmation.id) return;
+    try {
+      await axios.delete(`${appConfig.campaignApiUrl}/${deleteConfirmation.id}`);
+      fetchCampaigns();
+    } catch (error) {
+      console.error('Error deleting campaign:', error);
+    } finally {
+      setDeleteConfirmation({ isOpen: false, id: null });
     }
   };
 
@@ -499,6 +505,36 @@ const CampaignManagement = () => {
                   </button>
                 </div>
               </form>
+            </div>
+          </div>
+        </div>
+      )}
+      {deleteConfirmation.isOpen && (
+        <div className="fixed inset-0 bg-foreground/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden animate-in fade-in zoom-in duration-200">
+            <div className="p-6 text-center">
+              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-2">Delete Campaign</h3>
+              <p className="text-muted-foreground mb-6">Are you sure you want to delete this campaign? This cannot be undone.</p>
+              
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setDeleteConfirmation({ isOpen: false, id: null })}
+                  className="flex-1 px-4 py-2 border border-border text-foreground rounded-lg hover:bg-muted font-medium transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={confirmDeleteAction}
+                  className="flex-1 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 font-medium shadow-md transition-all"
+                >
+                  Delete
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -38,7 +38,9 @@ const ProductCard = ({ product, onClick }) => {
   );
 };
 
-const ProductGrid = () => {
+import WeightInputModal from './WeightInputModal';
+
+const ProductGrid = ({ refreshTrigger = 0 }) => {
   const { t } = useLanguage();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -52,6 +54,8 @@ const ProductGrid = () => {
 
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState({ slug: 'all', name: 'Tümü' }); // Store object to track active state better
+  
+  const [weightedProduct, setWeightedProduct] = useState(null);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -71,7 +75,7 @@ const ProductGrid = () => {
     setPage(1);
     setHasMore(true);
     fetchProducts(1, selectedCategory.slug);
-  }, [selectedCategory]);
+  }, [selectedCategory, refreshTrigger]);
 
   const fetchProducts = async (currentPage, categorySlug) => {
     setLoading(true);
@@ -125,6 +129,22 @@ const ProductGrid = () => {
   const handleCategoryClick = (category) => {
       if (selectedCategory.slug !== category.slug) {
          setSelectedCategory(category);
+      }
+  };
+
+  const handleProductClick = (product) => {
+      // Check if product category is 'kiloluk' (weighted)
+      if (product.category === 'kiloluk') {
+          setWeightedProduct(product);
+      } else {
+          addToCart(product);
+      }
+  };
+
+  const handleWeightConfirm = (weightKg) => {
+      if (weightedProduct) {
+          addToCart(weightedProduct, weightKg); // Add with specific quantity (weight in kg)
+          setWeightedProduct(null);
       }
   };
 
@@ -194,7 +214,7 @@ const ProductGrid = () => {
         <div className="overflow-y-auto flex-grow min-h-0 -mx-1 px-1">
           <div className="grid grid-cols-2 xl:grid-cols-3 gap-4 pb-4">
             {products.map((product) => (
-              <ProductCard key={product._id} product={product} onClick={() => addToCart(product)} />
+              <ProductCard key={product._id} product={product} onClick={() => handleProductClick(product)} />
             ))}
           </div>
           
@@ -212,6 +232,13 @@ const ProductGrid = () => {
           )}
         </div>
       )}
+
+      <WeightInputModal 
+        isOpen={!!weightedProduct}
+        onClose={() => setWeightedProduct(null)}
+        product={weightedProduct}
+        onConfirm={handleWeightConfirm}
+      />
     </div>
   );
 };

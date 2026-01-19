@@ -38,7 +38,7 @@ const QuickAddProductModal = ({ isOpen, onClose, initialBarcode, onSuccess }) =>
   const handleAddProduct = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/products', newProduct);
+      const response = await axios.post('/api/products', newProduct);
       
       // Reset form
       setNewProduct({
@@ -48,7 +48,7 @@ const QuickAddProductModal = ({ isOpen, onClose, initialBarcode, onSuccess }) =>
         category: 'urun'
       });
 
-      if (onSuccess) onSuccess();
+      if (onSuccess) onSuccess(response.data);
       onClose();
     } catch (error) {
       console.error('Error adding product:', error);

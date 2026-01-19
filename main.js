@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const { spawn } = require('child_process');
 const { autoUpdater } = require('electron-updater');
@@ -10,6 +10,11 @@ const PORT = 3000;
 // Configure auto-updater
 autoUpdater.autoDownload = true;
 autoUpdater.autoInstallOnAppQuit = true;
+
+// Handle App Quit
+ipcMain.on('app-quit', () => {
+  app.quit();
+});
 
 function startServer() {
   return new Promise((resolve, reject) => {
@@ -95,20 +100,42 @@ function createWindow() {
 }
 
 // Auto-updater events
+// Auto-updater events
+const sendStatusToWindow = (text) => {
+  if (mainWindow) {
+    mainWindow.webContents.send('update-message', text);
+  }
+};
+
 autoUpdater.on('checking-for-update', () => {
-  console.log('Checking for updates...');
+  sendStatusToWindow('Checking for updates...');
 });
 
 autoUpdater.on('update-available', (info) => {
-  console.log('Update available:', info);
+  sendStatusToWindow('Update available.');
 });
 
 autoUpdater.on('update-not-available', (info) => {
-  console.log('Update not available:', info);
+  sendStatusToWindow('Update not available.');
 });
 
 autoUpdater.on('error', (err) => {
-  console.error('Update error:', err);
+  sendStatusToWindow('Error in auto-updater. ' + err);
+});
+
+autoUpdater.on('download-progress', (progressObj) => {
+  let log_message = "Download speed: " + progressObj.bytesPerSecond;
+  log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
+  log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
+  sendStatusToWindow(log_message);
+});
+
+autoUpdater.on('update-downloaded', (info) => {
+  sendStatusToWindow('Update downloaded');
+  // Optional: Prompt user to restart
+  if (mainWindow) {
+    mainWindow.webContents.send('update-downloaded');
+  }
 });
 
 autoUpdater.on('download-progress', (progressObj) => {
@@ -130,6 +157,11 @@ app.whenReady().then(async () => {
 
       // Check for updates in production
       autoUpdater.checkForUpdatesAndNotify();
+
+      // Check every hour
+      setInterval(() => {
+        autoUpdater.checkForUpdatesAndNotify();
+      }, 60 * 60 * 1000);
     } catch (err) {
       console.error('Failed to start embedded server:', err);
     }

@@ -11,7 +11,7 @@ export function KeyboardProvider({ children }) {
   const keyboardRef = useRef(null);
   const activeInputRef = useRef(null); // Store reference to the actual DOM element
 
-  const [isKeyboardEnabled, setIsKeyboardEnabled] = useState(true);
+  const [isKeyboardEnabled, setIsKeyboardEnabled] = useState(false);
 
   const toggleKeyboardEnabled = () => {
     setIsKeyboardEnabled(prev => !prev);

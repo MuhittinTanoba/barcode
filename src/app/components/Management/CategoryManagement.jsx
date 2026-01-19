@@ -10,6 +10,7 @@ const CategoryManagement = () => {
     const [isAdding, setIsAdding] = useState(false);
     const [editingCategory, setEditingCategory] = useState(null);
     const [message, setMessage] = useState(null);
+    const [deleteConfirmation, setDeleteConfirmation] = useState({ isOpen: false, id: null });
 
     const [newCategory, setNewCategory] = useState({
         name: '',
@@ -66,14 +67,20 @@ const CategoryManagement = () => {
         }
     };
 
-    const handleDelete = async (id) => {
-        if (!window.confirm('Are you sure?')) return;
+    const handleDelete = (id) => {
+        setDeleteConfirmation({ isOpen: true, id });
+    };
+
+    const confirmDeleteAction = async () => {
+        if (!deleteConfirmation.id) return;
         try {
-            await axios.delete(`/api/categories?id=${id}`);
+            await axios.delete(`/api/categories?id=${deleteConfirmation.id}`);
             fetchCategories();
             showMessage('success', 'Category deleted');
         } catch (error) {
              showMessage('error', error.response?.data?.message || 'Failed to delete category');
+        } finally {
+            setDeleteConfirmation({ isOpen: false, id: null });
         }
     };
 
@@ -208,6 +215,36 @@ const CategoryManagement = () => {
                     </tbody>
                 </table>
             </div>
+            {deleteConfirmation.isOpen && (
+                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4">
+                    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden animate-scale-in">
+                        <div className="p-6 text-center">
+                            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">Delete Category</h3>
+                            <p className="text-gray-500 mb-6">Are you sure you want to delete this category? This cannot be undone.</p>
+                            
+                            <div className="flex gap-3">
+                                <button
+                                onClick={() => setDeleteConfirmation({ isOpen: false, id: null })}
+                                className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-medium transition-colors"
+                                >
+                                Cancel
+                                </button>
+                                <button
+                                onClick={confirmDeleteAction}
+                                className="flex-1 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 font-medium shadow-md transition-all"
+                                >
+                                Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

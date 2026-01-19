@@ -46,7 +46,7 @@ export const CartProvider = ({ children }) => {
   }, []);
 
   const updateQuantity = useCallback((index, quantity) => {
-    if (quantity < 1) return;
+    if (quantity <= 0) return;
     setCartItems(prevItems => 
       prevItems.map((item, i) => 
         i === index ? { ...item, quantity } : item

@@ -120,9 +120,9 @@ const VirtualKeyboard = () => {
   return (
     <div 
         id="virtual-keyboard-container"
-        className={`fixed bottom-0 left-0 right-0 z-[9999] transition-transform duration-300 ease-in-out transform ${isKeyboardOpen ? 'translate-y-0' : 'translate-y-full'}`}
+        className={`fixed bottom-4 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl z-[9999] transition-all duration-300 ease-in-out transform ${isKeyboardOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0 pointer-events-none'}`}
     >
-      <div className="bg-white/90 backdrop-blur-md shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] border-t border-gray-200 p-2 pb-6">
+      <div className="bg-white/95 backdrop-blur-md shadow-2xl border border-gray-200 rounded-2xl p-3 pb-4">
           <div className="flex justify-between items-center mb-2 px-2">
             <div className="text-xs text-gray-400 font-medium uppercase tracking-wider">Virtual Keyboard</div>
             <button 
