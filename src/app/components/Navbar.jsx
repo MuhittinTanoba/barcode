@@ -181,7 +181,7 @@ function Navbar() {
           <div className="flex items-center ml-2 border-l pl-2">
              <button
                 onClick={toggleKeyboardEnabled}
-                className={`p-2 rounded-lg transition-colors ${!isKeyboardEnabled ? 'bg-blue-100 text-blue-600' : 'text-muted-foreground hover:bg-gray-100'}`}
+                className={`p-2 rounded-lg transition-colors ${!isKeyboardEnabled ? 'bg-red-100 text-red-600' : 'text-muted-foreground hover:bg-gray-100'}`}
                 title="Toggle Virtual Keyboard"
              >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
