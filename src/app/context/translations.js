@@ -77,7 +77,7 @@ export const translations = {
         total: "Toplam",
         cartEmpty: "Sepet boş",
         productManagement: "Ürün Yönetimi",
-        addNewProduct: "Yeni Ürün Ekle",
+        addNewProduct: "Yeni Ürün Ekle!",
         barcode: "Barkod",
         productName: "Ürün Adı",
         productCode: "Ürün Kodu",
