@@ -157,43 +157,33 @@ const sendStatusToWindow = (text) => {
 };
 
 autoUpdater.on('checking-for-update', () => {
-  sendStatusToWindow('Checking for updates...');
+  sendStatusToWindow('Güncelleme aranıyor...');
 });
 
 autoUpdater.on('update-available', (info) => {
-  sendStatusToWindow('Update available.');
+  sendStatusToWindow('Güncelleme bulundu. Yüklenecek...');
 });
 
 autoUpdater.on('update-not-available', (info) => {
-  sendStatusToWindow('Update not available.');
+  sendStatusToWindow('Güncelleme bulunamadı.');
 });
 
 autoUpdater.on('error', (err) => {
-  sendStatusToWindow('Error in auto-updater. ' + err);
+  sendStatusToWindow('Güncelleme hatası: ' + err);
 });
 
 autoUpdater.on('download-progress', (progressObj) => {
-  let log_message = "Download speed: " + progressObj.bytesPerSecond;
-  log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
-  log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
+  let log_message = "İndirme hızı: " + Math.round(progressObj.bytesPerSecond / 1024) + " KB/s";
+  log_message = log_message + ' - İndirilen ' + Math.round(progressObj.percent) + '%';
   sendStatusToWindow(log_message);
 });
 
 autoUpdater.on('update-downloaded', (info) => {
-  sendStatusToWindow('Update downloaded');
+  sendStatusToWindow('Güncelleme indirildi. Uygulama kapatıldığında yüklenecek.');
   // Optional: Prompt user to restart
   if (mainWindow) {
     mainWindow.webContents.send('update-downloaded');
   }
-});
-
-autoUpdater.on('download-progress', (progressObj) => {
-  console.log(`Download speed: ${progressObj.bytesPerSecond} - Downloaded ${progressObj.percent}%`);
-});
-
-autoUpdater.on('update-downloaded', (info) => {
-  console.log('Update downloaded:', info);
-  // Will auto-install on quit
 });
 
 app.whenReady().then(async () => {

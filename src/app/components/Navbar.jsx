@@ -29,11 +29,7 @@ function Navbar() {
         // Listen for updates
         if (window.electronAPI?.onUpdateMessage) {
             window.electronAPI.onUpdateMessage((msg) => {
-                // Shorten message for UI
-                if (msg.includes('Downloading')) setUpdateMessage('Downloading...');
-                else if (msg.includes('available')) setUpdateMessage('Update Available');
-                else if (msg.includes('downloaded')) setUpdateMessage('Restart to Update');
-                else setUpdateMessage('');
+                setUpdateMessage(msg);
             });
         }
     }, []);
@@ -185,7 +181,7 @@ function Navbar() {
           <div className="flex items-center ml-2 border-l pl-2">
              <button
                 onClick={toggleKeyboardEnabled}
-                className={`p-2 rounded-lg transition-colors ${!isKeyboardEnabled ? 'bg-pink-100 text-pink-600' : 'text-muted-foreground hover:bg-gray-100'}`}
+                className={`p-2 rounded-lg transition-colors ${!isKeyboardEnabled ? 'bg-gray-100 text-gray-600' : 'text-muted-foreground hover:bg-gray-100'}`}
                 title="Toggle Virtual Keyboard"
              >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -237,9 +233,9 @@ function Navbar() {
             </div>
           )}
           
-          <div className="absolute bottom-1 right-2 text-xs text-slate-300 pointer-events-none opacity-50 flex flex-col items-end">
+          <div className="absolute bottom-1 right-2 text-xs text-slate-300 pointer-events-none flex flex-col items-end">
              <span>v{appVersion}</span>
-             {updateMessage && <span className="text-[10px] text-green-500 animate-pulse">{updateMessage}</span>}
+             {updateMessage && <span className="text-xs text-blue-500 font-bold animate-pulse">{updateMessage}</span>}
           </div>
         </div>
       </nav>
