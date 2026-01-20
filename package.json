@@ -1,6 +1,6 @@
 {
   "name": "boss-pos",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Boss POS - Point of Sale System",
   "private": true,
   "main": "main.js",
@@ -89,6 +89,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MuhittinTanoba/barcode.git"
+    "url": "git+https://github.com/MuhittinTanoba/barcode.git"
   }
 }
