@@ -22,7 +22,7 @@ class PrinterManager {
         fs.writeFileSync(tempFilePath, buffer);
       } catch (err) {
         console.error('Failed to write temp print file:', err);
-        return resolve(false);
+        return reject(new Error(`Failed to write temp print file: ${err.message}`));
       }
 
       // Execute the PowerShell script that uses C# RawPrinterHelper
@@ -38,8 +38,9 @@ class PrinterManager {
         }
 
         if (error) {
-          console.error(`Printer Error (${printerName}):`, error.message, stderr);
-          return resolve(false);
+          const msg = `Printer Error (${printerName}): ${error.message}`;
+          console.error(msg, stderr);
+          return reject(new Error(`${msg}\nStderr: ${stderr}`));
         }
 
         // Check if our script output "Success"
@@ -47,8 +48,9 @@ class PrinterManager {
           console.log(`Print success: ${printerName}`);
           resolve(true);
         } else {
-          console.error(`Printer Script Failed (${printerName}):`, stdout, stderr);
-          resolve(false);
+          const msg = `Printer Script Failed (${printerName})`;
+          console.error(msg, stdout, stderr);
+          reject(new Error(`${msg}. Output: ${stdout}. Error: ${stderr}`));
         }
       });
     });
@@ -108,7 +110,7 @@ class PrinterManager {
 
     } catch (err) {
       console.error('Kitchen print generation error:', err);
-      return false;
+      throw new Error(`Kitchen print generation failed: ${err.message}`);
     }
   }
 
@@ -206,7 +208,7 @@ class PrinterManager {
 
     } catch (err) {
       console.error('Cashier print generation error:', err);
-      return false;
+      throw new Error(`Cashier print generation failed: ${err.message}`);
     }
   }
 
@@ -235,9 +237,10 @@ class PrinterManager {
 
       const buffer = printer.getBuffer();
       return await this._printRaw(buffer, config.printerName);
+
     } catch (e) {
       console.error('Test print failed:', e);
-      return false;
+      throw new Error(`Test print failed: ${e.message}`);
     }
   }
 }

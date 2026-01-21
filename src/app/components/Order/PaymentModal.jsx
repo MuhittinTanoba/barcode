@@ -76,7 +76,8 @@ const PaymentModal = ({ total, items = [], onClose, onProcessPayment }) => {
       // alert('Receipt sent to printer!');
     } catch (error) {
       console.error('Printing error:', error);
-      alert(t('printError') || 'Failed to print receipt');
+      const detailedError = error.message || (typeof error === 'object' ? JSON.stringify(error) : String(error));
+      alert(`${t('printError') || 'Failed to print receipt'}:\n${detailedError}`);
     } finally {
       setIsProcessing(false);
     }
